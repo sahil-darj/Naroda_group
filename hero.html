@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Section</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            width: 100%;
+            height: 100vh;
+            background: url('naroda_group_assets/1 (22).jpeg') no-repeat center center/cover;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        /* DARK OVERLAY FOR TEXT READABILITY */
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(3, 10, 40, 0.9) 30%, rgba(3, 10, 40, 0.3) 60%, rgba(0, 0, 0, 0) 100%);
+        }
+
+        /* TEXT CONTAINER */
+        .hero-content {
+            position: relative;
+            color: white;
+            width: 50%;
+            padding-left: 80px;
+        }
+
+        /* SMALL TITLE */
+        .hero-content h3 {
+            font-size: 30px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        /* BIG MAIN TEXT */
+        .hero-content h1 {
+            font-size: 120px;
+            font-weight: 900;
+            line-height: 0.9;
+            text-transform: lowercase;
+        }
+
+        /* SUB TEXT */
+        .hero-content p {
+            margin-top: 20px;
+            font-size: 18px;
+            letter-spacing: 2px;
+            opacity: 0.85;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:900px) {
+            .hero-content {
+                width: 100%;
+                padding: 30px;
+            }
+
+            .hero-content h1 {
+                font-size: 70px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h3>SHILP<br>TWIN TOWERS</h3>
+            <h1>twin<br>towers</h1>
+            <p>RETAIL & WORK SPACES | @ GIFT SEZ</p>
+        </div>
+    </section>
+
+</body>
+
+</html>

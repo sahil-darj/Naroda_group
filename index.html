@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naroda Group | Premium Real Estate Developers in Ahmedabad</title>
+  <meta name="description"
+    content="Explore top residential and commercial real estate projects in Ahmedabad with Naroda Group. Trusted for quality and timely delivery.">
+  <link rel="icon" type="image/jpeg" href="naroda_group_assets/naroda copy.jpeg">
+  <!-- keeping your existing vendor/css -->
+  <link rel="stylesheet" href="assets/vendor-Cs8yHCv6.css">
+  <link rel="stylesheet" href="assets/index-BHu5_JeH.css">
+
+
+
+
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* ----- global reset & typography ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #ffffff;
+      color: #111;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Fixed empty ruleset */
+
+    .container-base {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    @media (min-width:768px) {
+      .container-base {
+        padding: 0 2.5rem;
+      }
+    }
+
+    .-mx-4 {
+      margin-left: -1rem;
+      margin-right: -1rem;
+    }
+
+    .-mx-6 {
+      margin-left: -1.5rem;
+      margin-right: -1.5rem;
+    }
+
+    .-mx-20 {
+      margin-left: -5rem;
+      margin-right: -5rem;
+    }
+
+    @media (min-width:1024px) {
+      .lg\:-mx-20 {
+        margin-left: -5rem;
+        margin-right: -5rem;
+      }
+    }
+
+    /* ----- NEW HERO (Shilp-style) ----- */
+    .hero-new {
+      width: 100%;
+      height: 100vh;
+      background: url('naroda_group_assets/banner.png') no-repeat center 15% / cover;
+      background-color: #0d1b3e;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .hero-new::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(5, 12, 40, 0.8) 0%, rgba(5, 12, 40, 0.4) 40%, transparent 100%);
+      z-index: 1;
+    }
+
+    .hero-new-content {
+      position: relative;
+      z-index: 5;
+      color: white;
+      text-align: left;
+      padding-left: 5%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hero-new-content h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      letter-spacing: 0.8em;
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+      opacity: 0.9;
+    }
+
+    .hero-new-content h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(4rem, 12vw, 9.5rem);
+      font-weight: 900;
+      line-height: 0.85;
+      text-transform: lowercase;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.04em;
+    }
+
+    .hero-new-content p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      font-weight: 400;
+      opacity: 0.8;
+      margin-bottom: 3rem;
+    }
+
+    .hero-new-content .hero-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 36px;
+      background: white;
+      color: black;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .hero-new-content .hero-btn:hover {
+      background: #f3f4f6;
+      transform: scale(1.04);
+    }
+
+    @media (max-width: 900px) {
+      .hero-new {
+        justify-content: center;
+      }
+
+      .hero-new-content {
+        padding-left: 5%;
+        padding-right: 5%;
+        text-align: center;
+        align-items: center;
+      }
+
+      .hero-new-content h3 {
+        font-size: 0.9rem;
+        letter-spacing: 0.4em;
+        margin-bottom: 0.5rem;
+      }
+
+      .hero-new-content h1 {
+        font-size: clamp(3rem, 15vw, 5rem);
+        margin-bottom: 1rem;
+      }
+
+      .hero-new-content p {
+        font-size: 0.8rem;
+        letter-spacing: 0.2em;
+        margin-bottom: 2rem;
+      }
+    }
+
+    /* ----- consistent project card (both same) ----- */
+    .project-card {
+      transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.3s;
+      background: white;
+      border-radius: 2rem;
+      overflow: hidden;
+      box-shadow: 0 8px 30px -10px rgba(0, 0, 0, 0.1);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.25);
+    }
+
+    .project-img {
+      aspect-ratio: 16/10;
+      overflow: hidden;
+    }
+
+    .project-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s ease;
+    }
+
+    .project-card:hover .project-img img {
+      transform: scale(1.07);
+    }
+
+    .project-content {
+      padding: 1.8rem 2rem 2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-content h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .project-content p {
+      color: #4b5563;
+      margin: 0.75rem 0 1.5rem;
+      line-height: 1.6;
+    }
+
+    .project-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+    }
+
+    .price-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: #6b7280;
+      text-transform: uppercase;
+    }
+
+    .price-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    /* ----- testimonial card with quote style ----- */
+    /* ----- testimonial styles matching premium reference ----- */
+    .testimonial-section {
+      padding: 8rem 2rem;
+      background: white;
+      text-align: center;
+      position: relative;
+    }
+
+    .testimonial-slider {
+      max-width: 950px;
+      margin: 0 auto;
+      position: relative;
+      min-height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .testimonial-track {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .testimonial-slide {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateY(-40%) scale(0.95);
+    }
+
+    .testimonial-slide.active {
+      position: relative;
+      top: 0;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+    }
+
+    .testimonial-content {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.1rem, 3.5vw, 1.6rem);
+      line-height: 1.8;
+      color: #111;
+      font-style: italic;
+      margin-bottom: 2rem;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+
+    .testimonial-stars {
+      color: #fbbf24;
+      font-size: 0.9rem;
+      margin-bottom: 2.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+    }
+
+    .testimonial-author {
+      margin-top: 3rem;
+      position: relative;
+    }
+
+    .testimonial-author::before {
+      content: '';
+      position: absolute;
+      top: -1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 1px;
+      background: #e5e7eb;
+    }
+
+    .testimonial-author h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+      color: #111;
+    }
+
+    .testimonial-author p {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+    }
+
+    /* Navigation Arrows */
+    .slider-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+
+    .slider-nav-btn:hover {
+      color: #111;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .slider-nav-btn.prev {
+      left: -20px;
+    }
+
+    .slider-nav-btn.next {
+      right: -20px;
+    }
+
+    @media (max-width: 1024px) {
+      .slider-nav-btn {
+        display: none;
+        /* Hide arrows on mobile/tablet in favor of dots */
+      }
+
+      .testimonial-track {
+        max-width: 100%;
+        padding: 0 10px;
+      }
+    }
+
+    /* Slider Dots */
+    .slider-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 4rem;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #e5e7eb;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .dot.active {
+      background: #111;
+      transform: scale(1.2);
+    }
+
+    /* ===== OUR JOURNEY – CLEAN, TEXT-FOCUSED, COOL ===== */
+    .journey-section {
+      background: transparent;
+      /* no black background */
+      color: #111;
+      padding: 5rem 0;
+    }
+
+    .journey-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* elegant header with subtle separation */
+    .journey-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .journey-header h2 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: #111;
+    }
+
+    .journey-header h2 span {
+      display: block;
+      font-weight: 300;
+      font-size: 1.2rem;
+      color: #6b7280;
+      margin-top: 0.75rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+    }
+
+    .journey-header p {
+      max-width: 600px;
+      margin: 1.5rem auto 0;
+      color: #4b5563;
+      font-size: 1.2rem;
+      font-style: italic;
+      border-top: 1px solid #e5e7eb;
+      padding-top: 2rem;
+    }
+
+    /* stats in a balanced grid – pure typography */
+    .journey-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3rem 2rem;
+      margin-top: 2rem;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-item h4 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 700;
+      color: #111;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-item p {
+      font-size: 0.9rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #6b7280;
+      font-weight: 500;
+    }
+
+    /* responsive */
+    @media (max-width:800px) {
+      .journey-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width:480px) {
+      .journey-stats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ----- CTA (exact style from your reference) ----- */
+    .cta-block {
+      background: #000;
+      border-radius: 3rem;
+      padding: 5rem 2.5rem;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-bg-image {
+      position: absolute;
+      inset: 0;
+      background-image: url('naroda_group_assets/1 (21).jpeg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.1;
+      transition: opacity 0.5s;
+    }
+
+    .cta-block:hover .cta-bg-image {
+      opacity: 0.2;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .cta-content h2 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .cta-content p {
+      font-size: 1.25rem;
+      color: #e5e7eb;
+      margin: 1.5rem 0 2.5rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1.2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-cta-primary {
+      background: white;
+      color: black;
+      border: none;
+      padding: 1rem 2.8rem;
+      border-radius: 60px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-cta-primary:hover {
+      background: #f3f4f6;
+      transform: scale(1.03);
+    }
+
+    .btn-cta-secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+      padding: 1rem 2.8rem;
+      border-radius: 60px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-cta-secondary:hover {
+      background: white;
+      color: black;
+      transform: scale(1.03);
+    }
+
+    section {
+      animation: fadeIn 0.7s ease;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    .py-section {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    /* stylized eyebrow divider */
+    .eyebrow-line-container {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .eyebrow-line-container.center {
+      justify-content: center;
+    }
+
+    .eyebrow-line {
+      flex: 0 1 60px;
+      height: 1px;
+      background: #e2e8f0;
+    }
+
+    .eyebrow-text-small {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #94a3b8;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="header-container"></div>
+  <main>
+
+    <!-- HERO (Shilp-style) -->
+    <section class="hero-new" style="margin-bottom:0;">
+      <div class="hero-new-content">
+        <h3>NARODA GROUP</h3>
+        <h1>premium<br>living</h1>
+        <p>Luxury Residential Spaces | Ahmedabad</p>
+        <a href="projects-residential.html" class="hero-btn">
+          Explore Projects
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+            width="16" height="16">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <div class="container-base overflow-hidden" style="padding-top:2rem;">
+
+      <!-- WHO WE ARE -->
+      <section class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 py-16 lg:py-20">
+        <div class="lg:w-1/2">
+          <img src="naroda_group_assets/1 (26).jpeg" alt="About Naroda Group"
+            class="rounded-[2.5rem] w-full object-cover shadow-2xl transition-transform duration-700 hover:scale-[1.02]">
+        </div>
+        <div class="lg:w-1/2 space-y-6">
+          <div class="eyebrow-line-container">
+            <span class="eyebrow-text-small">Who We Are</span>
+            <div class="eyebrow-line"></div>
+          </div>
+          <h2
+            style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: #111; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 24px;">
+            Trust in Naroda,<br><span
+              style="font-family: 'Playfair Display', serif; font-style: italic; color: #C5A47E;">Build
+              Your Future</span></h2>
+          <p style="color: #555; font-size: 1rem; line-height: 1.8; margin-bottom: 18px;">Naroda Group, a real estate
+            company in Ahmedabad that is driven by quality, integrity and authenticity has earned recognition as one of
+            the top builders of Ahmedabad. The company is known for undertaking large, diverse projects, fostering
+            innovation, embracing emerging technologies, and making a difference for their clients, employees and
+            community. We are a brand that people trust because our projects help to house people's ambitions.</p>
+
+          <p style="color: #555; font-size: 1rem; line-height: 1.8; margin-bottom: 28px;">Founded in 2004 by <strong
+              style="color:#111;">Mr. Yash Brahmbhatt</strong>, Naroda Group started with a small land acquisition and
+            has since grown into a trusted brand shaping Ahmedabad's skyline. It was the first to develop projects on
+            Sindhu Bhavan Road, now a prime location, and continues to pioneer strategic real estate developments.
+            Adapting to trends while staying true to <strong style="color:#111;">timeless values</strong>.</p>
+          <a href="about-us.html"
+            class="inline-block px-8 py-3 bg-black text-white rounded-full font-medium hover:bg-gray-800 transition-colors">About
+            Us</a>
+        </div>
+      </section>
+
+      <!-- WHY CHOOSE US / ADVANTAGE (unchanged) -->
+      <section class="py-32 lg:py-48 -mx-6 px-6 sm:-mx-8 sm:px-8 lg:-mx-12 lg:px-12 mt-12 mb-8"
+        style="background: linear-gradient(145deg, #f8fafc, #ffffff);">
+        <div class="container-base max-w-7xl mx-auto">
+          <div class="text-center max-w-3xl mx-auto mb-16 mt-20" style="margin-top: 20px;">
+            <h2 class="text-3xl lg:text-5xl font-bold mt-4">The Naroda Group Advantage</h2>
+            <p class="text-gray-600 mt-6">Experience excellence in residential living with unmatched quality,
+              transparency, and customer satisfaction</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- 4 cards unchanged -->
+            <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group">
+              <div
+                class="w-12 h-12 bg-black text-white rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-gray-800 transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-4">Premium Infrastructure</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">World-class residential spaces with modern amenities and
+                smart technology integration.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group">
+              <div
+                class="w-12 h-12 bg-black text-white rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-gray-800 transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25s-7.5-4.108-7.5-11.25a7.5 7.5 0 1115 0z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-4">Prime Locations</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">Strategically located in Ahmedabad's fastest-growing
+                residential corridors.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group">
+              <div
+                class="w-12 h-12 bg-black text-white rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-gray-800 transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.5 4.5L21.75 7.5" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M18.75 7.5H21.75V10.5" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-4">High ROI Potential</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">Excellent investment opportunity with strong appreciation
+                and luxury living value.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group">
+              <div
+                class="w-12 h-12 bg-black text-white rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-gray-800 transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-4">Trusted Developer</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">15+ years of excellence with full legal approvals and
+                transparent documentation.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURED PROJECTS (cards identical) -->
+      <section id="featured-projects" class="py-32 lg:py-56" style="margin-top: 100px;">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div class="max-w-2xl">
+            <div class="eyebrow-line-container">
+              <span class="eyebrow-text-small">Featured Projects</span>
+              <div class="eyebrow-line"></div>
+            </div>
+            <h2
+              style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: #111; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 24px;">
+              Our Signature<br><span
+                style="font-family: 'Playfair Display', serif; font-style: italic; color: #C5A47E;">Projects</span></h2>
+            <p class="text-gray-600 mt-6 lg:text-lg">Discover our lavish residential developments designed to exceed
+              expectations</p>
+          </div>
+        </div>
+        <div id="index-projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
+          <!-- Dynamic Projects loaded via JS -->
+          <div class="text-center py-20 col-span-2 text-gray-400">Loading our signature projects...</div>
+        </div>
+      </section>
+
+      <!-- ===== OUR JOURNEY – CLEAN, TEXT-ONLY, COOL ===== -->
+      <section class="py-32 lg:py-56 journey-section -mx-6 px-6 sm:-mx-8 sm:px-8 lg:-mx-12 lg:px-12">
+        <div class="container-base">
+          <div class="journey-content">
+            <!-- header with elegant typography -->
+            <div class="journey-header">
+              <div class="eyebrow-line-container center">
+                <div class="eyebrow-line"></div>
+                <span class="eyebrow-text-small">our journey</span>
+                <div class="eyebrow-line"></div>
+              </div>
+              <h2 class="text-3xl lg:text-5xl font-black leading-[1.15] text-gray-900 mt-4 mb-8"
+                style="letter-spacing: -0.02em;">
+                Shaping Ahmedabad's<br>
+                <span
+                  style="font-family: 'Playfair Display', serif; font-style: italic; color: #C5A47E; font-weight: 400;">Skyline</span>
+              </h2>
+              <p>Numbers that reflect our commitment to quality and customer satisfaction</p>
+            </div>
+
+            <!-- stats grid – pure text, no backgrounds -->
+            <div class="journey-stats-grid">
+              <div class="stat-item">
+                <h4 id="stat-years">15+</h4>
+                <p>Years of Excellence</p>
+              </div>
+              <div class="stat-item">
+                <h4 id="stat-families">2048+</h4>
+                <p>Happy Families</p>
+              </div>
+              <div class="stat-item">
+                <h4 id="stat-projects">50+</h4>
+                <p>Projects Delivered</p>
+              </div>
+              <div class="stat-item">
+                <h4 id="stat-sqft">5M+</h4>
+                <p>Sq. Ft. Developed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS (Premium Slider) -->
+      <section class="testimonial-section">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="text-center mb-16">
+            <div class="eyebrow-line-container center">
+              <div class="eyebrow-line"></div>
+              <span class="eyebrow-text-small">Testimonials</span>
+              <div class="eyebrow-line"></div>
+            </div>
+            <h2
+              style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: #111; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 24px;">
+              What People<br><span
+                style="font-family: 'Playfair Display', serif; font-style: italic; color: #C5A47E;">Are
+                Saying</span></h2>
+          </div>
+
+          <div class="testimonial-slider">
+            <button class="slider-nav-btn prev" id="prev-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-8 h-8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+            </button>
+
+            <div class="testimonial-track" id="testimonial-track">
+              <!-- Slides injected by JS -->
+            </div>
+
+            <button class="slider-nav-btn next" id="next-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-8 h-8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="slider-dots" id="slider-dots">
+            <!-- Dots injected by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA (exact style) -->
+      <section class="pb-32 lg:pb-64 px-4 pt-32 lg:pt-64" style="margin-top: 50px;">
+        <div class="cta-block">
+          <div class="cta-bg-image"></div>
+          <div class="cta-content">
+            <h2>Ready to Find Your Perfect Space?</h2>
+            <p>Be a part of our journey. Invest in quality, transparency, and excellence.</p>
+            <div class="cta-buttons">
+              <a href="projects-residential.html" class="btn-cta-primary"> EXPLORE PROJECTS</a>
+              <a href="contact-us.html" class="btn-cta-secondary">CONTACT US</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div> <!-- end container-base -->
+  </main>
+  <div id="footer-container" style="margin-top: 50px;"></div>
+
+  <!-- counting animation script (triggers on scroll) -->
+  <script>
+    async function loadTestimonials() {
+      try {
+        const response = await fetch('admin2/api/api.php?action=get_testimonials');
+        const data = await response.json();
+        const track = document.getElementById('testimonial-track');
+        const dotsContainer = document.getElementById('slider-dots');
+
+        if (data && data.length > 0) {
+          track.innerHTML = data.map((t, i) => {
+            const rating = parseInt(t.rating) || 5;
+            return `
+            <div class="testimonial-slide ${i === 0 ? 'active' : ''}">
+              <div class="testimonial-content">
+                "${t.content}"
+              </div>
+              <div class="testimonial-stars">
+                ${'<i class="fas fa-star"></i>'.repeat(rating)}
+                ${'<i class="far fa-star"></i>'.repeat(Math.max(0, 5 - rating))}
+              </div>
+              <div class="testimonial-author">
+                <h4>${t.name}</h4>
+                <p>Verified Resident - ${t.project || 'Naroda Group'}</p>
+              </div>
+            </div>
+          `}).join('');
+
+          dotsContainer.innerHTML = data.map((_, i) => `
+            <div class="dot ${i === 0 ? 'active' : ''}" onclick="goToSlide(${i})"></div>
+          `).join('');
+
+          initTestimonialSlider(data.length);
+        }
+      } catch (error) {
+        console.error('Error loading testimonials:', error);
+      }
+    }
+
+    let currentSlide = 0;
+    let slideInterval;
+
+    function initTestimonialSlider(count) {
+      const nextBtn = document.getElementById('next-btn');
+      const prevBtn = document.getElementById('prev-btn');
+
+      nextBtn.addEventListener('click', () => {
+        currentSlide = (currentSlide + 1) % count;
+        updateSlider();
+        resetInterval();
+      });
+
+      prevBtn.addEventListener('click', () => {
+        currentSlide = (currentSlide - 1 + count) % count;
+        updateSlider();
+        resetInterval();
+      });
+
+      window.goToSlide = (index) => {
+        currentSlide = index;
+        updateSlider();
+        resetInterval();
+      };
+
+      resetInterval();
+    }
+
+    function updateSlider() {
+      const slides = document.querySelectorAll('.testimonial-slide');
+      const dots = document.querySelectorAll('.dot');
+
+      slides.forEach((s, i) => {
+        s.classList.toggle('active', i === currentSlide);
+      });
+
+      dots.forEach((d, i) => {
+        d.classList.toggle('active', i === currentSlide);
+      });
+    }
+
+    function resetInterval() {
+      clearInterval(slideInterval);
+      slideInterval = setInterval(() => {
+        const slides = document.querySelectorAll('.testimonial-slide');
+        if (slides.length > 0) {
+          currentSlide = (currentSlide + 1) % slides.length;
+          updateSlider();
+        }
+      }, 6000);
+    }
+
+    async function loadAdvantages() {
+      try {
+        const response = await fetch('admin2/api/api.php?action=get_advantages&limit=50');
+        const advantages = await response.json();
+        const grid = document.getElementById('advantages-grid');
+        if (advantages && advantages.length > 0) {
+          grid.innerHTML = advantages.map(a => `
+            <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group">
+              <div class="w-12 h-12 bg-black text-white rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-gray-800 transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  ${a.icon}
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-4">${a.title}</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">${a.description}</p>
+            </div>
+          `).join('');
+        }
+      } catch (e) { console.error('Error loading advantages:', e); }
+    }
+
+    async function loadProjects() {
+      try {
+        const response = await fetch('admin2/api/api.php?action=get_projects&limit=2');
+        const projects = await response.json();
+        const grid = document.getElementById('index-projects-grid');
+
+        if (projects && projects.length > 0) {
+          const fixP = (p) => p && !p.startsWith('http') && !p.startsWith('admin2/') && !p.startsWith('naroda_group_assets/') ? 'admin2/' + p : p;
+          grid.innerHTML = projects.map(p => {
+            const imgSrc = p.image ? fixP(p.image) : 'naroda_group_assets/1 (26).jpeg';
+            const detailUrl = p.detail_url ? p.detail_url : `project-details.html?id=${p.id}`;
+            return `
+            <div class="project-card">
+              <div class="project-img"><img src="${imgSrc}" alt="${p.name}" onerror="this.src='https://placehold.co/1200x800/c5a47e/fff?text=${encodeURIComponent(p.name)}'"></div>
+              <div class="project-content">
+                <div>
+                  <span class="inline-block bg-black/5 backdrop-blur-sm px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-5">${p.type || 'Premium Residences'}</span>
+                  <h3>${p.name}</h3>
+                  <p class="text-gray-500 mb-2"><i class="fas fa-map-marker-alt"></i> ${p.location || 'Ahmedabad'}</p>
+                  <p>${p.description || 'Experience luxury and comfort in our thoughtfully designed spaces.'}</p>
+                </div>
+                <div class="project-footer">
+                  <div>
+                    <div class="price-label">Starting Price</div>
+                    <div class="price-value">₹ ${p.price || 'Enquire'}/sq.ft</div>
+                  </div>
+                  <a href="${detailUrl}"
+                    class="w-12 h-12 border border-black rounded-full flex items-center justify-center hover:bg-black hover:text-white transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>`;
+          }).join('');
+        } else {
+          grid.innerHTML = '<p class="col-span-2 text-center text-gray-500">Stay tuned for our upcoming signature projects.</p>';
+        }
+      } catch (error) {
+        console.error('Error loading projects:', error);
+      }
+    }
+    (function () {
+      loadTestimonials();
+      loadAdvantages();
+      loadProjects();
+      const yearEl = document.getElementById('stat-years');
+      if (!yearEl) return;
+
+      const familiesEl = document.getElementById('stat-families');
+      const projectsEl = document.getElementById('stat-projects');
+      const sqftEl = document.getElementById('stat-sqft');
+
+      const targetYears = 15, targetFamilies = 2048, targetProjects = 50, targetSqft = 5;
+      let animationStarted = false;
+
+      function startCounting() {
+        if (animationStarted) return;
+        animationStarted = true;
+
+        let currentYears = 0, currentFamilies = 0, currentProjects = 0, currentSqft = 0;
+        const duration = 2000; // 2 seconds
+        const startTime = performance.now();
+
+        function animateNumbers(now) {
+          const elapsed = now - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+
+          currentYears = Math.floor(progress * targetYears);
+          currentFamilies = Math.floor(progress * targetFamilies);
+          currentProjects = Math.floor(progress * targetProjects);
+          currentSqft = Math.floor(progress * targetSqft);
+
+          yearEl.textContent = currentYears + '+';
+          familiesEl.textContent = currentFamilies + '+';
+          projectsEl.textContent = currentProjects + '+';
+          sqftEl.textContent = currentSqft + 'M+';
+
+          if (progress < 1) {
+            requestAnimationFrame(animateNumbers);
+          } else {
+            yearEl.textContent = '15+';
+            familiesEl.textContent = '2048+';
+            projectsEl.textContent = '50+';
+            sqftEl.textContent = '5M+';
+          }
+        }
+        requestAnimationFrame(animateNumbers);
+      }
+
+      const section = document.querySelector('.journey-section');
+      if (section) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              startCounting();
+              observer.disconnect();
+            }
+          });
+        }, { threshold: 0.3 });
+        observer.observe(section);
+      } else {
+        setTimeout(startCounting, 500);
+      }
+    })();
+  </script>
+  <script src="js/main.js?v=2026_v4"></script>
+</body>
+
+</html>

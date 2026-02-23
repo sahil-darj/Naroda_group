@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs | Naroda Group - Premium Real Estate Ahmedabad</title>
+    <meta name="description"
+        content="Stay updated with the latest real estate trends, luxury living tips, and investment guides from Naroda Group.">
+    <link rel="icon" type="image/jpeg" href="naroda_group_assets/naroda copy.jpeg">
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="assets/vendor-Cs8yHCv6.css">
+    <link rel="stylesheet" href="assets/index-BHu5_JeH.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #ffffff;
+            color: #111;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container-base {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .career-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 14px;
+        }
+
+        .career-label::before,
+        .career-label::after {
+            content: "";
+            height: 1px;
+            width: 100px;
+            background: #eee;
+        }
+
+        /* Hero / Header Spacer */
+        .blog-header-spacer {
+            height: 75px;
+            background: #000;
+        }
+
+        .page-title-section {
+            padding: 80px 0 40px;
+            text-align: center;
+        }
+
+        .page-title-section h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 10px;
+        }
+
+        .page-title-section p {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Blog Grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 50px 40px;
+            padding: 60px 0 120px;
+        }
+
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .blog-card {
+            display: flex;
+            flex-direction: column;
+            background: transparent;
+            transition: transform 0.3s ease;
+        }
+
+        /* .blog-card:hover { transform: translateY(-5px); } */
+
+        .blog-image-wrap {
+            width: 100%;
+            aspect-ratio: 16/10;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .blog-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .blog-card:hover .blog-image-wrap img {
+            transform: scale(1.08);
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .blog-meta i {
+            font-size: 16px;
+        }
+
+        .blog-title {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 15px;
+            color: #111;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            min-height: 62px;
+            transition: color 0.3s;
+        }
+
+        .blog-card:hover .blog-title {
+            color: #C5A47E;
+        }
+
+        .blog-excerpt {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            flex-grow: 1;
+        }
+
+        .read-more-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: #111;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+
+        .read-more-btn .arrow-btn {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .read-more-btn:hover .arrow-btn {
+            background: #111;
+            color: #fff;
+            border-color: #111;
+            transform: rotate(-45deg);
+        }
+
+        /* Shimmer loading */
+        .shimmer {
+            background: #f6f7f8;
+            background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+            background-repeat: no-repeat;
+            background-size: 800px 100%;
+            display: inline-block;
+            position: relative;
+            animation: shimmer 1s linear infinite forwards;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -468px 0;
+            }
+
+            100% {
+                background-position: 468px 0;
+            }
+        }
+
+        /* Empty state */
+        #no-blogs {
+            text-align: center;
+            padding: 100px 0;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header-container"></div>
+
+    <div class="blog-header-spacer"></div>
+
+    <main>
+        <section class="page-title-section">
+            <div class="container-base">
+                <div class="career-label">Blog</div>
+                <p>Stay informed with the latest insights, news, and guides from the world of real estate.</p>
+            </div>
+        </section>
+
+        <section class="container-base">
+            <div id="no-blogs">
+                <h3>No blog posts found.</h3>
+                <p>Check back later for exciting updates.</p>
+            </div>
+
+            <div class="blog-grid" id="blog-container">
+                <!-- Skeleton cards -->
+                <div class="blog-card shimmer-card">
+                    <div class="blog-image-wrap shimmer" style="height: 250px;"></div>
+                    <div class="shimmer" style="height: 20px; width: 40%; margin-bottom: 15px;"></div>
+                    <div class="shimmer" style="height: 30px; width: 90%; margin-bottom: 15px;"></div>
+                    <div class="shimmer" style="height: 80px; width: 100%; margin-bottom: 25px;"></div>
+                </div>
+                <div class="blog-card shimmer-card">
+                    <div class="blog-image-wrap shimmer" style="height: 250px;"></div>
+                    <div class="shimmer" style="height: 20px; width: 40%; margin-bottom: 15px;"></div>
+                    <div class="shimmer" style="height: 30px; width: 90%; margin-bottom: 15px;"></div>
+                    <div class="shimmer" style="height: 80px; width: 100%; margin-bottom: 25px;"></div>
+                </div>
+                <div class="blog-card shimmer-card">
+                    <div class="blog-image-wrap shimmer" style="height: 250px;"></div>
+                    <div class="shimmer" style="height: 20px; width: 40%; margin-bottom: 15px;"></div>
+                    <div class="shimmer" style="height: 30px; width: 90%; margin-bottom: 15px;"></div>
+                    <div class="shimmer" style="height: 80px; width: 100%; margin-bottom: 25px;"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <!-- JS -->
+    <script src="js/main.js"></script>
+    <script>
+        async function fetchBlogs() {
+            const container = document.getElementById('blog-container');
+            const noBlogs = document.getElementById('no-blogs');
+
+            try {
+                const response = await fetch('admin2/api/api.php?action=get_blogs');
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+                const responseText = await response.text();
+                let blogs;
+                try {
+                    blogs = JSON.parse(responseText);
+                } catch (e) {
+                    console.error('Invalid JSON:', responseText);
+                    throw new Error('Invalid JSON from server');
+                }
+
+                if (Array.isArray(blogs) && blogs.length > 0) {
+                    const formatImagePath = (path) => {
+                        if (!path) return 'naroda_group_assets/1 (26).jpeg';
+                        if (path.startsWith('api/')) return 'admin2/' + path;
+                        return path;
+                    };
+
+                    container.innerHTML = blogs.map(blog => {
+                        const date = new Date(blog.created_at);
+                        const formattedDate = date.toLocaleDateString('en-GB', {
+                            day: '2-digit',
+                            month: 'short',
+                            year: 'numeric'
+                        });
+
+                        return `
+                            <article class="blog-card">
+                                <a href="blog-details.html?id=${blog.id}" class="blog-image-wrap">
+                                    <img src="${formatImagePath(blog.image)}" alt="${blog.title}" loading="lazy">
+                                </a>
+                                <div class="blog-meta">
+                                    <i class="far fa-calendar-alt"></i>
+                                    <span>${formattedDate.toUpperCase()}</span>
+                                </div>
+                                <a href="blog-details.html?id=${blog.id}" style="text-decoration: none; color: inherit;">
+                                    <h2 class="blog-title">${blog.title}</h2>
+                                </a>
+                                <p class="blog-excerpt">${blog.short_description}</p>
+                                <a href="blog-details.html?id=${blog.id}" class="read-more-btn">
+                                    <span>Read More</span>
+                                    <div class="arrow-btn">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                            <polyline points="12 5 19 12 12 19"></polyline>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </article>
+                        `;
+                    }).join('');
+                } else {
+                    container.style.display = 'none';
+                    noBlogs.style.display = 'block';
+                    if (blogs && blogs.error) {
+                        noBlogs.querySelector('p').textContent = blogs.error;
+                    }
+                }
+            } catch (error) {
+                console.error('Error fetching blogs:', error);
+                container.style.display = 'none';
+                noBlogs.style.display = 'block';
+                noBlogs.querySelector('h3').textContent = 'Something went wrong.';
+                noBlogs.querySelector('p').textContent = error.message;
+            }
+        }
+
+        // Initialize
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('main-nav');
+            if (nav) {
+                if (window.scrollY > 50) {
+                    nav.style.background = 'rgba(0,0,0,0.85)';
+                } else {
+                    nav.style.background = 'black';
+                }
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', fetchBlogs);
+    </script>
+</body>
+
+</html>

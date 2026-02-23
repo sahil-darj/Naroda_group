@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Details | Naroda Group</title>
+    <link rel="icon" type="image/jpeg" href="favicon-Naroda.jpeg">
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="assets/vendor-Cs8yHCv6.css">
+    <link rel="stylesheet" href="assets/index-BHu5_JeH.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #ffffff;
+            color: #111;
+            line-height: 1.8;
+        }
+
+        .container-base {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .blog-header-spacer {
+            height: 100px;
+            background: #000;
+        }
+
+        .blog-detail-hero {
+            padding: 80px 0 40px;
+        }
+
+        .blog-detail-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .blog-detail-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 40px;
+            letter-spacing: -0.02em;
+        }
+
+        .blog-detail-image {
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 50px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-detail-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .blog-detail-content {
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .blog-detail-content p {
+            margin-bottom: 25px;
+        }
+
+        .back-to-blogs {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 60px;
+            padding: 12px 25px;
+            background: #f5f5f5;
+            color: #111;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .back-to-blogs:hover {
+            background: #111;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header-container"></div>
+    <div class="blog-header-spacer"></div>
+
+    <main class="container-base blog-detail-hero">
+        <div id="loading">Loading...</div>
+        <div id="blog-content" style="display: none;">
+            <div class="blog-detail-meta">
+                <span id="blog-date"></span>
+                <span style="opacity: 0.3;">|</span>
+                <span id="blog-author">ADMIN</span>
+            </div>
+            <h1 class="blog-detail-title" id="blog-title"></h1>
+            <div class="blog-detail-image">
+                <img id="blog-image" src="" alt="">
+            </div>
+            <div class="blog-detail-content">
+                <div id="blog-description" style="font-weight: 600; font-size: 1.25rem; margin-bottom: 30px;"></div>
+                <div id="blog-body"></div>
+            </div>
+
+            <a href="blog.html" class="back-to-blogs">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Back to Blogs
+            </a>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="js/main.js"></script>
+    <script>
+        async function fetchBlogDetails() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const blogId = urlParams.get('id');
+
+            const formatImagePath = (path) => {
+                if (!path) return 'naroda_group_assets/1 (26).jpeg';
+                if (path.startsWith('api/')) return 'admin2/' + path;
+                return path;
+            };
+
+            if (!blogId) {
+                window.location.href = 'blog.html';
+                return;
+            }
+
+            try {
+                const response = await fetch(`admin2/api/api.php?action=get_blog&id=${blogId}`);
+                const blog = await response.json();
+
+                if (blog && !blog.error) {
+                    document.getElementById('loading').style.display = 'none';
+                    document.getElementById('blog-content').style.display = 'block';
+
+                    document.getElementById('blog-title').textContent = blog.title;
+                    document.title = blog.title + " | Naroda Group";
+
+                    const date = new Date(blog.created_at);
+                    document.getElementById('blog-date').textContent = date.toLocaleDateString('en-GB', {
+                        day: '2-digit',
+                        month: 'short',
+                        year: 'numeric'
+                    }).toUpperCase();
+
+                    document.getElementById('blog-author').textContent = blog.author || 'ADMIN';
+                    document.getElementById('blog-image').src = formatImagePath(blog.image);
+                    document.getElementById('blog-description').textContent = blog.short_description;
+                    document.getElementById('blog-body').innerHTML = blog.content || '<p>No content available for this post.</p>';
+                } else {
+                    document.getElementById('loading').textContent = 'Blog post not found.';
+                }
+            } catch (error) {
+                console.error('Error fetching blog details:', error);
+                document.getElementById('loading').textContent = 'Error loading content.';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchBlogDetails);
+    </script>
+</body>
+
+</html>

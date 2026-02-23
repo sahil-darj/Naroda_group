@@ -1,0 +1,6 @@
+﻿main.js:790 -> <a href="https://wa.me/917383185892?text=I'm interested in Naroda Arise" target="_blank" style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 12px; background: #f0fdf4; border-radius: 12px; text-decoration: none; border: 1px solid #dcfce7; transition: all 0.3s;">
+main.js:797 -> <a href="https://wa.me/919879023570?text=I'm interested in Naroda Lavish" target="_blank" style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 12px; background: #f0fdf4; border-radius: 12px; text-decoration: none; border: 1px solid #dcfce7; transition: all 0.3s;">
+main.js:820 -> <a href="https://wa.me/917383185892?text=I'm interested in Naroda Arise" class="wa-popup-row" target="_blank">
+main.js:825 -> <a href="https://wa.me/919879023570?text=I'm interested in Naroda Lavish" class="wa-popup-row" target="_blank">
+main.js:941 -> const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(waMessage)}`;
+contact-us.html:580 -> const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(waMessage)}`;

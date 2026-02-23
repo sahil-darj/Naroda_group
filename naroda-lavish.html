@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naroda Lavish | Luxurious 3 & 4 BHK Apartments in Naroda</title>
+    <meta name="description"
+        content="Experience the height of urban living at Naroda Lavish. Premium 3 & 4 BHK apartments with 40+ lifestyle amenities in Hanspura, Naroda.">
+    <link rel="icon" type="image/jpeg" href="naroda_group_assets/naroda copy.jpeg">
+    <link rel="stylesheet" href="assets/vendor-Cs8yHCv6.css">
+    <link rel="stylesheet" href="assets/index-BHu5_JeH.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #C5A47E;
+            --gold-light: #d4b896;
+            --black: #111;
+            --gray-light: #f3f4f6;
+            --text-dark: #1e1e1e;
+            --text-muted: #4b5563;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: #fff;
+            color: var(--text-dark);
+            scroll-behavior: smooth;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        @media(min-width:768px) {
+            .container {
+                padding: 0 2rem;
+            }
+        }
+
+        .section-py {
+            padding: 5rem 0;
+        }
+
+        @media(min-width:1024px) {
+            .section-py {
+                padding: 7rem 0;
+            }
+        }
+
+        .text-gold {
+            color: var(--gold);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 25px;
+            background: var(--gold);
+            color: #fff;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Hero — redesigned exactly as Shilp Serene reference image */
+        .hero {
+            height: 95vh;
+            min-height: 600px;
+            position: relative;
+            background: #000;
+            display: flex;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .hero-visuals {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.05);
+            transition: transform 10s ease-out;
+        }
+
+        .hero:hover .hero-bg {
+            transform: scale(1);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(0deg, rgba(0, 0, 0, .6) 0%, rgba(0, 0, 0, .2) 50%, transparent 100%);
+        }
+
+        /* The white floating info bar at the bottom */
+        .hero-info-bar {
+            position: absolute;
+            bottom: -40px;
+            left: 0;
+            right: 0;
+            z-index: 100;
+        }
+
+        .info-bar-content {
+            background: #fff;
+            padding: 2rem 2.5rem;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            min-height: 140px;
+        }
+
+        .info-left h1 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #111;
+            margin: 0;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+
+        .info-left p {
+            color: #4b5563;
+            font-size: 1rem;
+            margin-top: 10px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            line-height: 1.4;
+        }
+
+        .info-right {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: nowrap;
+        }
+
+        .info-icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #444;
+            transition: all 0.3s ease;
+        }
+
+        .icon-circle {
+            width: 50px;
+            height: 50px;
+            border: 1.5px solid #eee;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: #888;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .info-icon-item:hover .icon-circle {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: #fff;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(197, 164, 126, 0.3);
+        }
+
+        .info-icon-item span {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            margin-top: 4px;
+        }
+
+        .info-icon-item:hover span {
+            color: var(--gold);
+        }
+
+        @media (max-width: 1024px) {
+            .info-bar-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+                padding: 2rem;
+            }
+
+            .hero-info-bar {
+                bottom: -100px;
+            }
+
+            .hero {
+                margin-bottom: 120px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .info-right {
+                gap: 1.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .icon-circle {
+                width: 50px;
+                height: 50px;
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Keep all other existing styles EXACTLY as before */
+        .btn-gold {
+            background: var(--gold);
+            color: #fff;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            display: inline-block;
+            transition: all .3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .btn-gold:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(197, 164, 126, .4);
+        }
+
+        .btn-outline-gold {
+            background: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            display: inline-block;
+            transition: all .3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .btn-outline-gold:hover {
+            background: var(--gold);
+            color: #fff;
+        }
+
+        /* Section headings */
+        .section-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+        }
+
+        /* Welcome */
+        .welcome-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media(min-width:1024px) {
+            .welcome-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .welcome-img {
+            width: 100%;
+            border-radius: 40px;
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, .15);
+        }
+
+        .stats-row {
+            display: flex;
+            gap: 2.5rem;
+            padding-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--black);
+        }
+
+        .stat-item p {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+        }
+
+        .highlights-list {
+            list-style: none;
+            margin-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .highlights-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .highlights-list li::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--gold);
+            flex-shrink: 0;
+        }
+
+        /* Gallery - LANDSCAPE ONLY */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .gallery-item {
+            border-radius: 24px;
+            overflow: hidden;
+            aspect-ratio: 16 / 9 !important;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(197, 164, 126, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* High-end hover icon like project-details.html */
+        .gallery-item::after {
+            content: '\f00e';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0);
+            color: rgba(255, 255, 255, 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            transition: all 0.35s ease;
+            backdrop-filter: blur(0px);
+        }
+
+        .gallery-item:hover::after {
+            background: rgba(0, 0, 0, 0.35);
+            color: rgba(255, 255, 255, 1);
+            backdrop-filter: blur(2px);
+        }
+
+        /* Floor Plans */
+        .plans-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media(min-width:768px) {
+            .plans-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .plan-card {
+            background: #fff;
+            border-radius: 40px;
+            padding: 2rem;
+            box-shadow: 0 10px 25px -10px rgba(0, 0, 0, .08);
+            transition: box-shadow .3s;
+        }
+
+        .plan-card:hover {
+            box-shadow: 0 25px 40px -15px rgba(197, 164, 126, .2);
+        }
+
+        .plan-img {
+            width: 100%;
+            border-radius: 20px;
+            background: #fafafa;
+            object-fit: contain;
+            margin-bottom: 1.5rem;
+        }
+
+        .plan-specs {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 1.25rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .plan-spec-item p:first-child {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+        }
+
+        .plan-spec-item p:last-child {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        /* Amenities */
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+        }
+
+        @media(min-width:640px) {
+            .amenities-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media(min-width:1024px) {
+            .amenities-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .amenity-card {
+            background: var(--gray-light);
+            border-radius: 28px;
+            padding: 2rem 1rem;
+            text-align: center;
+            transition: all .25s;
+        }
+
+        .amenity-card:hover {
+            background: #e8e8e8;
+            transform: translateY(-4px);
+        }
+
+        .amenity-card i {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 0.75rem;
+        }
+
+        .amenity-card h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .amenity-card p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* Location */
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        @media(min-width:1024px) {
+            .location-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .map-wrapper {
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, .15);
+            aspect-ratio: 4/3;
+        }
+
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .location-highlights {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .location-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
+            background: var(--gray-light);
+            border-radius: 16px;
+        }
+
+        .location-item i {
+            color: var(--gold);
+            font-size: 1.1rem;
+            width: 20px;
+        }
+
+        /* Specifications */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        @media(min-width:768px) {
+            .specs-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .spec-item {
+            background: var(--gray-light);
+            border-radius: 16px;
+            padding: 1.25rem;
+        }
+
+        .spec-item .spec-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+        }
+
+        .spec-item .spec-value {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Brochure / CTA */
+        .cta-section {
+            background: var(--black);
+            padding: 6rem 0;
+            color: #fff;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            color: #9ca3af;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .cta-btns {
+            display: flex;
+            gap: 1.25rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Featured */
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media(min-width:768px) {
+            .featured-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .feature-card {
+            border-radius: 40px;
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 16/9;
+            display: block;
+        }
+
+        .feature-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .7s;
+        }
+
+        .feature-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .feature-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, .8) 0%, transparent 60%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem;
+            color: #fff;
+        }
+
+        /* Dummy header/footer */
+        .dummy-header,
+        .dummy-footer {
+            background: #fff;
+            padding: 1.2rem 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, .02);
+            text-align: center;
+            font-weight: 600;
+            border-bottom: 1px solid #eee;
+        }
+
+        .dummy-footer {
+            border-top: 1px solid #eee;
+            border-bottom: none;
+        }
+
+        /* Loading */
+        .loading-placeholder {
+            text-align: center;
+            padding: 4rem;
+            color: var(--text-muted);
+        }
+
+        .loading-placeholder i {
+            font-size: 2rem;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Property Modal Styles */
+        .property-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            overflow-y: auto;
+            backdrop-filter: blur(10px);
+            padding: 2rem 0;
+        }
+
+        .property-modal.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .modal-content-wrap {
+            background: #fff;
+            width: 95%;
+            max-width: 1000px;
+            margin: 0 auto;
+            border-radius: 40px;
+            overflow: hidden;
+            position: relative;
+            transform: translateY(30px);
+            transition: transform 0.4s ease;
+        }
+
+        .property-modal.active .modal-content-wrap {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .modal-close:hover {
+            transform: rotate(90deg);
+            background: var(--gold);
+            color: #fff;
+        }
+
+        .modal-hero {
+            height: 450px;
+            position: relative;
+        }
+
+        .modal-hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-body-content {
+            padding: 3rem;
+        }
+
+        .modal-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+            flex-wrap: wrap;
+        }
+
+        .modal-meta-item i {
+            color: var(--gold);
+            margin-right: 0.5rem;
+        }
+
+        .modal-section-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--black);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .modal-section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #eee;
+        }
+
+        .modal-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        @media(min-width: 768px) {
+            .modal-grid {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+
+        .modal-sidebar {
+            background: #f9fafb;
+            padding: 2rem;
+            border-radius: 30px;
+            height: fit-content;
+        }
+
+        .contact-card {
+            background: var(--black);
+            color: #fff;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .tag {
+            padding: 6px 16px;
+            background: #f3f4f6;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header-container">
+        <div class="dummy-header"><span class="text-gold">NARODA LAVISH</span> — PREMIUM LUXURY</div>
+    </div>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-visuals">
+                <img id="heroImg" src="https://placehold.co/1800x1200/c5a47e/ffffff?text=Naroda+Lavish"
+                    alt="Naroda Lavish Hero" class="hero-bg">
+                <div class="hero-overlay"></div>
+            </div>
+
+            <!-- Floating Info Bar — Updated with 6 Buttons -->
+            <div class="hero-info-bar">
+                <div class="container">
+                    <div class="info-bar-content">
+                        <div class="info-left">
+                            <h1 id="heroTitle">Naroda Lavish</h1>
+                            <p id="infoSub">
+                                <span id="heroType">Premium Residences</span> |
+                                <span id="heroLoc">Location</span> |
+                                <span id="heroStatus">Project Status</span>
+                            </p>
+                        </div>
+                        <div class="info-right">
+                            <a href="contact-us.html" class="info-icon-item">
+                                <div class="icon-circle"><i class="far fa-envelope"></i></div>
+                                <span>Inquiry</span>
+                            </a>
+                            <a href="#" id="infoDownload" class="info-icon-item">
+                                <div class="icon-circle"><i class="fas fa-download"></i></div>
+                                <span>Download</span>
+                            </a>
+                            <a href="#gallery" class="info-icon-item">
+                                <div class="icon-circle"><i class="far fa-image"></i></div>
+                                <span>Gallery</span>
+                            </a>
+                            <a href="#floor-plans" class="info-icon-item">
+                                <div class="icon-circle"><i class="fas fa-layer-group"></i></div>
+                                <span>Floor Plan</span>
+                            </a>
+                            <a href="#location" class="info-icon-item">
+                                <div class="icon-circle"><i class="fas fa-map-marker-alt"></i></div>
+                                <span>Location</span>
+                            </a>
+                            <a href="#featured-projects" class="info-icon-item">
+                                <div class="icon-circle"><i class="fas fa-star"></i></div>
+                                <span>Featured Property</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Welcome / Overview -->
+        <section id="welcome" class="section-py" style="background:#fff;">
+            <div class="container">
+                <div class="welcome-grid">
+                    <div>
+                        <img id="welcomeImg" src="https://placehold.co/800x1000/c5a47e/ffffff?text=Naroda+Lavish"
+                            alt="Welcome" class="welcome-img">
+                    </div>
+                    <div>
+                        <span class="section-label" id="welcomeLabel">Welcome</span>
+                        <h2 class="section-title" id="overviewTitle">A Life of Refined Elegance</h2>
+                        <p id="overviewDesc"
+                            style="color:var(--text-muted);margin-top:1.5rem;font-size:1.05rem;line-height:1.8;">
+                            Welcome to a life of refined elegance and modern comforts. Naroda Lavish offers meticulously
+                            designed living spaces with 40+ lifestyle amenities.
+                        </p>
+                        <ul class="highlights-list" id="highlightsList"></ul>
+                        <div class="stats-row" id="statsRow">
+                            <div class="stat-item">
+                                <h3 id="statAmenities">40+</h3>
+                                <p>Amenities</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3 id="statBhk">3 & 4</h3>
+                                <p>BHK Sizes</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3 id="statUnits">200+</h3>
+                                <p>Happy Families</p>
+                            </div>
+                            <div class="stat-item" id="statBlocksWrap" style="display:none;">
+                                <h3 id="statBlocks"></h3>
+                                <p>Blocks</p>
+                            </div>
+                            <div class="stat-item" id="statPossessionWrap" style="display:none;">
+                                <h3 id="statPossession"></h3>
+                                <p>Possession</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Floor Plans -->
+        <section id="floor-plans" class="section-py" style="background:#f9fafb;">
+            <div class="container">
+                <div style="text-align:center;margin-bottom:4rem;">
+                    <span class="section-label">Layouts</span>
+                    <h2 class="section-title">Premium Floor Plans</h2>
+                    <p style="color:var(--text-muted);margin-top:1rem;font-size:1.1rem;">Choose from our thoughtfully
+                        designed residences.</p>
+                </div>
+                <div class="plans-grid" id="floorPlansGrid">
+                    <div class="loading-placeholder"><i class="fas fa-spinner"></i>
+                        <p style="margin-top:1rem;">Loading plans...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery - Now all landscape images -->
+        <section id="gallery" class="section-py" style="background:#fff;">
+            <div class="container">
+                <div style="text-align:center;margin-bottom:4rem;">
+                    <span class="section-label">Visual Tour</span>
+                    <h2 class="section-title">Project Gallery</h2>
+                </div>
+                <div class="gallery-grid" id="galleryGrid">
+                    <div class="loading-placeholder"><i class="fas fa-spinner"></i></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Amenities -->
+        <section id="amenities" class="section-py" style="background:#f9fafb;">
+            <div class="container">
+                <div style="text-align:center;margin-bottom:4rem;">
+                    <span class="section-label">Lifestyle</span>
+                    <h2 class="section-title">World-Class Amenities</h2>
+                </div>
+                <div class="amenities-grid" id="amenitiesGrid">
+                    <div class="loading-placeholder" style="grid-column:span 4;"><i class="fas fa-spinner"></i></div>
+                </div>
+                <p style="text-align:center;margin-top:4rem;font-size:1.2rem;font-weight:600;">And Many More....</p>
+            </div>
+        </section>
+
+        <!-- Video Experience -->
+        <section id="videoExperience" class="section-py" style="background:#fff; display:none;">
+            <div class="container">
+                <div style="text-align:center;margin-bottom:4rem;">
+                    <span class="section-label">Virtual Tour</span>
+                    <h2 class="section-title">Video Experience</h2>
+                </div>
+                <div id="videoContainer"
+                    style="max-width:1000px; margin:0 auto; aspect-ratio: 16/9; position:relative;">
+                    <!-- Video/Iframe injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Specifications -->
+        <section id="specifications" class="section-py" style="background:#fff; display:none;">
+            <div class="container">
+                <div style="text-align:center;margin-bottom:3rem;">
+                    <span class="section-label">Construction</span>
+                    <h2 class="section-title">Specifications</h2>
+                </div>
+                <div class="specs-grid" id="specsGrid"></div>
+            </div>
+        </section>
+
+        <!-- Location -->
+        <section id="location" class="section-py" style="background:#f9fafb;">
+            <div class="container">
+                <div style="text-align:center;margin-bottom:4rem;">
+                    <span class="section-label">Where We Are</span>
+                    <h2 class="section-title">Prime Location</h2>
+                </div>
+                <div class="location-grid">
+                    <div>
+                        <div class="map-wrapper" id="mapWrapper">
+                            <img src="https://placehold.co/800x600/f3f4f6/c5a47e?text=Map+Loading..."
+                                style="width:100%;height:100%;object-fit:cover;" id="mapPlaceholder">
+                        </div>
+                    </div>
+                    <div>
+                        <p id="locationAddress" style="color:var(--text-muted);font-size:1rem;margin-bottom:1.5rem;">
+                        </p>
+                        <div class="location-highlights" id="locationHighlights"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Properties -->
+        <section id="featured-projects" class="section-py" style="background:#fff;">
+            <div class="container">
+                <div style="text-align:center;margin-bottom:4rem;">
+                    <span class="section-label">More Projects</span>
+                    <h2 class="section-title">Featured Properties</h2>
+                </div>
+                <div class="featured-grid" id="featuredGrid">
+                    <div class="loading-placeholder" style="grid-column:span 2;"><i class="fas fa-spinner"></i></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Call It Home?</h2>
+                <p>Experience luxury like never before. Book your site visit today.</p>
+                <div class="cta-btns">
+                    <a href="contact-us.html" class="btn-gold">Schedule a Visit</a>
+                    <a id="ctaPhone" href="tel:+911234567890" class="btn-outline-gold">Call Sales Team</a>
+                    <a id="brochureBtn" href="#" target="_blank" class="btn-outline-gold" style="display:none;"><i
+                            class="fas fa-file-pdf"></i> <span id="brochureLabel">Download Brochure</span></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-container">
+        <div class="dummy-footer" id="footerText">© 2026 Naroda Group — All rights reserved.</div>
+    </div>
+
+    <script src="js/main.js?v=4"></script>
+    <script>
+        const API = 'admin2/api/api.php';
+        const PROJECT_ID = 1; // Naroda Lavish
+
+        const fixPath = (p) => p && !p.startsWith('http') && !p.startsWith('admin2/') && !p.startsWith('naroda_group_assets/') ? 'admin2/' + p : p;
+
+
+
+        async function loadAll() {
+            try {
+                const res = await fetch(`${API}?action=get_project_details&id=${PROJECT_ID}`);
+                const data = await res.json();
+                if (!data) return;
+
+                // Log view
+                fetch(`${API}?action=log_view&id=${PROJECT_ID}`).catch(e => console.error(e));
+
+                const d = data.details || {};
+                const fixP = fixPath;
+
+                // ── Hero ──────────────────────────────────────────────────
+                if (d.hero_image) document.getElementById('heroImg').src = fixP(d.hero_image);
+                if (data.project) {
+                    const projectName = data.project.name || 'Naroda Lavish';
+                    document.getElementById('heroTitle').textContent = projectName;
+                    if (document.getElementById('heroType')) document.getElementById('heroType').textContent = data.project.type || 'Premium Residences';
+                    if (document.getElementById('welcomeLabel')) document.getElementById('welcomeLabel').textContent = 'Welcome to ' + projectName;
+                    if (document.getElementById('footerText')) document.getElementById('footerText').textContent = `© ${new Date().getFullYear()} ${projectName} — All rights reserved.`;
+                    document.title = `${projectName} | ${data.project.type || 'Premium Residences'}`;
+                }
+                if (d.location_address && document.getElementById('heroLoc')) {
+                    const addrParts = d.location_address.split(',').map(s => s.trim()).filter(s => s);
+                    const shortLoc = addrParts.slice(-2).join(', ');
+                    document.getElementById('heroLoc').textContent = shortLoc;
+                }
+                if (d.stat_possession && document.getElementById('heroStatus')) {
+                    document.getElementById('heroStatus').textContent = d.stat_possession;
+                }
+                if (d.brochure_pdf && document.getElementById('infoDownload')) {
+                    const downloadBtn = document.getElementById('infoDownload');
+                    downloadBtn.href = fixP(d.brochure_pdf);
+                    downloadBtn.setAttribute('target', '_blank');
+                } else {
+                    // Fallback to local PDF
+                    const downloadBtn = document.getElementById('infoDownload');
+                    if (downloadBtn) {
+                        downloadBtn.href = 'naroda-lavish.pdf';
+                        downloadBtn.setAttribute('target', '_blank');
+                    }
+                }
+
+                // ── Welcome ───────────────────────────────────────────────
+                if (d.welcome_image) document.getElementById('welcomeImg').src = fixP(d.welcome_image);
+                if (d.overview_title) document.getElementById('overviewTitle').textContent = d.overview_title;
+                if (d.overview_description) document.getElementById('overviewDesc').textContent = d.overview_description;
+
+                // Highlights
+                const hlList = document.getElementById('highlightsList');
+                const highlights = Array.isArray(d.overview_highlights) ? d.overview_highlights : [];
+                if (highlights.length) {
+                    hlList.innerHTML = highlights.map(h => `<li>${h}</li>`).join('');
+                }
+
+                // Stats
+                if (d.stat_amenities) document.getElementById('statAmenities').textContent = d.stat_amenities;
+                if (d.stat_bhk_sizes) document.getElementById('statBhk').textContent = d.stat_bhk_sizes;
+                if (d.stat_units) document.getElementById('statUnits').textContent = d.stat_units;
+                if (d.blocks) {
+                    document.getElementById('statBlocks').textContent = d.blocks;
+                    document.getElementById('statBlocksWrap').style.display = '';
+                }
+                if (d.stat_possession) {
+                    document.getElementById('statPossession').textContent = d.stat_possession;
+                    document.getElementById('statPossessionWrap').style.display = '';
+                }
+
+                // ── Floor Plans ───────────────────────────────────────────
+                const plansGrid = document.getElementById('floorPlansGrid');
+                if (data.plans && data.plans.length) {
+                    plansGrid.innerHTML = data.plans.map(plan => {
+                        const pricing = (data.pricing || []).find(p => p.plan_type === plan.plan_type);
+                        const price = pricing ? pricing.starting_price : 'Enquire';
+                        const imgSrc = plan.floor_image ? fixP(plan.floor_image) : `https://placehold.co/600x500/f0f0f0/c5a47e?text=${encodeURIComponent(plan.plan_type)}`;
+                        return `
+                        <div class="plan-card">
+                            <h3 style="font-size:1.5rem;font-weight:800;margin-bottom:1rem;">${plan.plan_type.toUpperCase()}</h3>
+                            <img src="${imgSrc}" alt="${plan.plan_type}" class="plan-img" style="max-height:280px;">
+                            <div class="plan-specs">
+                                <div class="plan-spec-item"><p>Super Area</p><p>${plan.super_area || '—'} sq.ft</p></div>
+                                ${plan.carpet_area ? `<div class="plan-spec-item"><p>Carpet Area</p><p>${plan.carpet_area} sq.ft</p></div>` : ''}
+                                <div class="plan-spec-item"><p>Bedrooms</p><p>${plan.bedrooms || '—'}</p></div>
+                                <div class="plan-spec-item"><p>Bathrooms</p><p>${plan.bathrooms || '—'}</p></div>
+                                ${plan.balconies ? `<div class="plan-spec-item"><p>Balconies</p><p>${plan.balconies}</p></div>` : ''}
+                                <div class="plan-spec-item"><p>Starting Price</p><p style="color:var(--gold);font-weight:800;">₹ ${price}</p></div>
+                            </div>
+                            ${plan.description ? `<p style="margin-top:1rem;color:var(--text-muted);font-size:0.9rem;font-style:italic;">${plan.description}</p>` : ''}
+                        </div>`;
+                    }).join('');
+                } else {
+                    plansGrid.innerHTML = '<p style="color:var(--text-muted);text-align:center;grid-column:span 2;">No floor plans added yet.</p>';
+                }
+
+                // ── Gallery ───────────────────────────────────────────────
+                const galleryGrid = document.getElementById('galleryGrid');
+                if (data.gallery && data.gallery.length) {
+                    const galleryItems = data.gallery.map(img => ({
+                        src: fixP(img.image_path),
+                        caption: img.caption || 'Project Gallery'
+                    }));
+                    galleryGrid.innerHTML = data.gallery.map((img, index) => {
+                        const itemsJson = JSON.stringify(galleryItems).replace(/'/g, "&apos;");
+                        return `
+                        <div class="gallery-item" onclick='window.openLightbox(${itemsJson}, ${index})'>
+                            <img src="${fixP(img.image_path)}" alt="${img.caption || 'Gallery'}">
+                        </div>`;
+                    }).join('');
+                } else {
+                    galleryGrid.innerHTML = '<p style="color:var(--text-muted);text-align:center;grid-column:1/-1;">No gallery images yet.</p>';
+                }
+
+                // ── Amenities ─────────────────────────────────────────────
+                const amenGrid = document.getElementById('amenitiesGrid');
+                let amenities = [];
+                try {
+                    if (d.amenities) {
+                        amenities = typeof d.amenities === 'string' ? JSON.parse(d.amenities) : d.amenities;
+                    }
+                } catch (e) { console.warn('Amenities parse error', e); }
+
+                if (Array.isArray(amenities) && amenities.length) {
+                    amenGrid.innerHTML = amenities.map(a => {
+                        let title = a.title || a.name || '';
+                        let icon = a.icon || '';
+                        let desc = a.description || '';
+
+                        if (!title && icon && !icon.startsWith('fa-')) {
+                            title = icon;
+                            icon = '';
+                        }
+
+                        if (!icon || icon === 'fa-star' || icon === 'star') {
+                            icon = getAmenityIcon(title);
+                        }
+
+                        const finalIcon = icon.startsWith('fa-') ? icon : 'fa-' + icon;
+
+                        return `
+                        <div class="amenity-card">
+                            <i class="fas ${finalIcon}" style="color:var(--gold); font-size: 2rem; margin-bottom: 0.75rem;"></i>
+                            <h4 style="color:var(--black); font-size: 0.9rem; font-weight: 600; margin-bottom: 0.25rem;">${title}</h4>
+                            <p style="color:var(--text-muted); font-size: 0.75rem;">${desc}</p>
+                        </div>`;
+                    }).join('');
+                } else {
+                    amenGrid.innerHTML = '<p style="color:var(--text-muted);grid-column:1/-1;text-align:center;">No amenities added yet.</p>';
+                }
+
+                // ── Specifications ────────────────────────────────────────
+                const specs = typeof d.specifications === 'object' && d.specifications ? d.specifications : {};
+                const specLabels = { structure: 'Structure', flooring: 'Flooring', kitchen: 'Kitchen', doors: 'Doors', windows: 'Windows', electrical: 'Electrical', plumbing: 'Plumbing', parking: 'Parking' };
+                const specEntries = Object.entries(specLabels).filter(([k]) => specs[k]);
+
+                if (specEntries.length && document.getElementById('specsGrid')) {
+                    document.getElementById('specsGrid').innerHTML = specEntries.map(([k, label]) => `
+                        <div class="spec-item">
+                            <div class="spec-label" style="font-size:0.7rem; text-transform:uppercase; letter-spacing:1px; color:var(--text-muted); margin-bottom:0.4rem;">${label}</div>
+                            <div class="spec-value" style="font-size:0.9rem; font-weight:600; color:var(--black);">${specs[k]}</div>
+                        </div>`).join('');
+                    document.getElementById('specifications').style.display = 'block';
+                }
+
+                // ── Video Experience ─────────────────────────────────────
+                const videoSect = document.getElementById('videoExperience');
+                const videoCont = document.getElementById('videoContainer');
+                if (d.video_url) {
+                    videoSect.style.display = 'block';
+                    let vUrl = d.video_url.trim();
+                    if (vUrl.includes('<iframe')) {
+                        videoCont.innerHTML = vUrl;
+                        const ifr = videoCont.querySelector('iframe');
+                        if (ifr) {
+                            ifr.style.width = '100%';
+                            ifr.style.height = '100%';
+                            ifr.style.borderRadius = '30px';
+                        }
+                    } else if (vUrl.includes('youtube.com') || vUrl.includes('youtu.be') || vUrl.includes('vimeo.com')) {
+                        let embedUrl = vUrl;
+                        if (vUrl.includes('watch?v=')) embedUrl = vUrl.replace('watch?v=', 'embed/');
+                        else if (vUrl.includes('youtu.be/')) embedUrl = vUrl.replace('youtu.be/', 'youtube.com/embed/');
+
+                        videoCont.innerHTML = `<iframe src="${embedUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;height:100%;border-radius:30px;box-shadow: 0 20px 50px rgba(0,0,0,0.15);"></iframe>`;
+                    } else {
+                        videoCont.innerHTML = `<video controls class="rounded-[30px] w-full shadow-2xl" style="max-height:600px; width:100%; border-radius:30px;">
+                            <source src="${fixP(vUrl)}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>`;
+                    }
+                }
+
+                // ── Location ──────────────────────────────────────────────
+                if (d.location_address) document.getElementById('locationAddress').textContent = d.location_address;
+                if (d.location_map_iframe) {
+                    document.getElementById('mapWrapper').innerHTML = d.location_map_iframe;
+                    const iframe = document.querySelector('#mapWrapper iframe');
+                    if (iframe) { iframe.style.width = '100%'; iframe.style.height = '100%'; iframe.style.border = '0'; }
+                }
+                const locHL = Array.isArray(d.location_highlights) ? d.location_highlights : [];
+                if (locHL.length) {
+                    document.getElementById('locationHighlights').innerHTML = locHL.map(item => `
+                        <div class="location-item">
+                            <i class="fas fa-map-pin"></i>
+                            <span>${item}</span>
+                        </div>`).join('');
+                }
+
+                // ── Featured Properties ───────────────────────────────────
+                const featGrid = document.getElementById('featuredGrid');
+                if (data.featured && data.featured.length) {
+                    featuredDataGlobal = data.featured;
+                    featGrid.innerHTML = data.featured.map(prop => `
+                        <div class="feature-card" onclick="openPropertyModal(${prop.id})" style="cursor:pointer;">
+                            <img src="${prop.image ? fixP(prop.image) : 'https://placehold.co/1200x800/c5a47e/fff?text=Property'}" 
+                                 alt="${prop.title}" 
+                                 onerror="this.src='https://placehold.co/1200x800/c5a47e/fff?text=Property'">
+                            <div class="feature-overlay">
+                                <span style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:0.5rem;">${prop.property_type}</span>
+                                <h3 style="font-size:1.5rem;font-weight:800;">${prop.title}</h3>
+                                <p style="color:#f3f4f6;margin-top:0.5rem;font-weight:500;">${prop.location} • ₹ ${prop.price}</p>
+                                <div style="display:flex;gap:1.2rem;margin-top:1rem;font-size:0.85rem;color:rgba(255,255,255,0.9);">
+                                    ${prop.bedrooms ? `<span><i class="fas fa-bed"></i> ${prop.bedrooms} Bed</span>` : ''}
+                                    ${prop.bathrooms ? `<span><i class="fas fa-bath"></i> ${prop.bathrooms} Bath</span>` : ''}
+                                    ${prop.area ? `<span><i class="fas fa-vector-square"></i> ${prop.area} sq.ft</span>` : ''}
+                                </div>
+                            </div>
+                        </div>`).join('');
+                } else {
+                    featGrid.innerHTML = '<p style="color:var(--text-muted);text-align:center;grid-column:span 2;">No featured properties yet.</p>';
+                }
+
+                // ── CTA ───────────────────────────────────────────────────
+                if (d.cta_phone) document.getElementById('ctaPhone').href = 'tel:' + d.cta_phone.replace(/\s/g, '');
+                if (d.brochure_pdf) {
+                    const btn = document.getElementById('brochureBtn');
+                    btn.href = fixP(d.brochure_pdf);
+                    btn.style.display = '';
+                    if (d.brochure_label) document.getElementById('brochureLabel').textContent = d.brochure_label;
+                }
+
+            } catch (err) {
+                console.error('Error loading project data:', err);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadAll);
+
+        let featuredDataGlobal = [];
+
+        function openPropertyModal(id) {
+            const prop = featuredDataGlobal.find(p => p.id == id);
+            if (!prop) return;
+
+            const modal = document.getElementById('propertyModal');
+            document.getElementById('modalImg').src = prop.image ? fixPath(prop.image) : 'https://placehold.co/1200x800/c5a47e/fff?text=Property';
+            document.getElementById('modalType').textContent = prop.property_type;
+            document.getElementById('modalTitle').textContent = prop.title;
+            document.getElementById('modalLocation').textContent = prop.location;
+            document.getElementById('modalPrice').textContent = '₹ ' + prop.price;
+
+            document.getElementById('modalBeds').textContent = prop.bedrooms || '-';
+            document.getElementById('modalBaths').textContent = prop.bathrooms || '-';
+            document.getElementById('modalArea').textContent = prop.area ? prop.area + ' sq.ft' : '-';
+            document.getElementById('modalStatus').textContent = prop.status || 'Ready';
+
+            document.getElementById('modalOverview').textContent = prop.overview || 'Luxury living at its finest, featuring premium finishes and modern architectural design.';
+
+            const amenContainer = document.getElementById('modalAmenTags');
+            const amenList = prop.amenities ? prop.amenities.split(',').map(s => s.trim()) : ['Swimming Pool', 'Gymnasium', 'Landscaped Garden', 'Club House', '24x7 Security'];
+            amenContainer.innerHTML = amenList.map(a => `<span class="tag">${a}</span>`).join('');
+
+            document.getElementById('modalFloorPlanText').textContent = prop.floor_plans || 'Optimized layouts designed for maximum natural light and ventilation.';
+            document.getElementById('modalLocationDetails').textContent = prop.location_details || 'Situated in a prime residential hub with excellent connectivity to major landmarks.';
+            document.getElementById('modalDocuments').textContent = prop.documents || 'Approved by all leading banks.';
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePropertyModal() {
+            document.getElementById('propertyModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closePropertyModal();
+        });
+    </script>
+
+    <!-- Property Detail Modal -->
+    <div id="propertyModal" class="property-modal">
+        <button class="modal-close" onclick="closePropertyModal()"><i class="fas fa-times"></i></button>
+        <div class="modal-content-wrap">
+            <div class="modal-hero">
+                <img id="modalImg" src="" alt="Property Detail">
+            </div>
+            <div class="modal-body-content">
+                <div style="margin-bottom: 2rem;">
+                    <span id="modalType" class="section-label">Property Type</span>
+                    <h2 id="modalTitle" class="section-title">Property Title</h2>
+                    <p id="modalLocation" style="color:var(--text-muted); font-size: 1.1rem; margin-top: 0.5rem;"></p>
+                </div>
+
+                <div class="modal-meta">
+                    <div class="modal-meta-item"><i class="fas fa-tag"></i> <span id="modalPrice"
+                            style="font-weight: 800; color: var(--gold); font-size: 1.25rem;"></span></div>
+                    <div class="modal-meta-item"><i class="fas fa-bed"></i> <span id="modalBeds"></span> BHK</div>
+                    <div class="modal-meta-item"><i class="fas fa-bath"></i> <span id="modalBaths"></span> Baths</div>
+                    <div class="modal-meta-item"><i class="fas fa-vector-square"></i> <span id="modalArea"></span></div>
+                    <div class="modal-meta-item"><i class="fas fa-check-circle"></i> <span id="modalStatus"></span>
+                    </div>
+                </div>
+
+                <div class="modal-grid">
+                    <div class="modal-main-info">
+                        <div style="margin-bottom: 3rem;">
+                            <h4 class="modal-section-title">Overview</h4>
+                            <p id="modalOverview" style="line-height: 1.8; color: var(--text-muted);"></p>
+                        </div>
+                        <div style="margin-bottom: 3rem;">
+                            <h4 class="modal-section-title">Floor Plans & Design</h4>
+                            <p id="modalFloorPlanText" style="line-height: 1.8; color: var(--text-muted);"></p>
+                        </div>
+                        <div style="margin-bottom: 3rem;">
+                            <h4 class="modal-section-title">Location Advantages</h4>
+                            <p id="modalLocationDetails" style="line-height: 1.8; color: var(--text-muted);"></p>
+                        </div>
+                    </div>
+                    <div class="modal-sidebar">
+                        <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem;">Key Amenities</h4>
+                        <div id="modalAmenTags" class="tags-container"></div>
+                        <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; margin-top: 2rem;">Legal &
+                            Documentation</h4>
+                        <p id="modalDocuments" style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+                        </p>
+                        <div class="contact-card">
+                            <h4 style="margin-bottom: 1rem;">Interested?</h4>
+                            <p style="font-size: 0.85rem; margin-bottom: 1.5rem; opacity: 0.8;">Get exclusive pricing
+                                and detailed floor plans for this unit.</p>
+                            <a href="contact-us.html" class="btn-gold"
+                                style="width: 100%; display: block; padding: 0.75rem;">Enquire Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

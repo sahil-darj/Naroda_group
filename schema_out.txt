@@ -1,0 +1,14 @@
+PROJECTS columns: id, name, type, price, location, description, detail_url, image, status, created_at
+Array
+(
+    [id] => 1
+    [name] => Naroda Lavish
+    [type] => Premium Residences
+    [price] => 12,500
+    [location] => Ahmedabad, Gujarat
+    [description] => Experience the height of urban living with premium 3 & 4 BHK apartments.
+    [detail_url] => 
+    [image] => api/uploads/projects/1771835945_1 (26).jpeg
+    [status] => Active
+    [created_at] => 2026-02-18 18:03:36
+)
