@@ -46,6 +46,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 try {
     switch ($action) {
 
+        case 'login':
+            $username = $_POST['username'] ?? $input_data['username'] ?? '';
+            $password = $_POST['password'] ?? $input_data['password'] ?? '';
+            
+            $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ? AND password = ?");
+            $stmt->execute([$username, $password]);
+            $user = $stmt->fetch();
+            
+            if ($user) {
+                echo json_encode(['success' => true, 'user' => ['username' => $user['username'], 'role' => $user['role']]]);
+            } else {
+                echo json_encode(['success' => false, 'error' => 'Invalid username or password']);
+            }
+            break;
+
         // ─── DASHBOARD ───────────────────────────────────────────────────────
         case 'get_dashboard_stats':
             $projectCount     = $pdo->query("SELECT COUNT(*) FROM projects")->fetchColumn();

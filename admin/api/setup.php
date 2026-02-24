@@ -150,6 +150,23 @@ try {
         FOREIGN KEY (project_id) REFERENCES projects(id) ON DELETE CASCADE
     )");
 
+    // Users Table
+    $pdo->exec("CREATE TABLE IF NOT EXISTS users (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        username VARCHAR(50) UNIQUE NOT NULL,
+        password VARCHAR(255) NOT NULL,
+        role VARCHAR(20) DEFAULT 'Admin',
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )");
+
+    // Insert Default Admin if not exists
+    $stmt = $pdo->prepare("SELECT COUNT(*) FROM users WHERE username = 'admin@naroda.com'");
+    $stmt->execute();
+    if ($stmt->fetchColumn() == 0) {
+        $stmt = $pdo->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
+        $stmt->execute(['admin@naroda.com', 'admin@123']);
+    }
+
     echo "<strong>✅ Setup Complete!</strong><br>";
     echo "All tables created/updated successfully.<br>";
     echo "Database: <code>$db</code><br>";

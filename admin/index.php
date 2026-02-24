@@ -1,3 +1,6 @@
+<?php
+// session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -644,12 +647,13 @@
             </div>
             <div class="login-form">
                 <div class="form-group">
-                    <input type="text" placeholder="Username" value="admin@naroda.com">
+                    <input type="text" id="login_username" placeholder="Username" value="admin@naroda.com">
                 </div>
                 <div class="form-group">
-                    <input type="password" placeholder="Password" value="password">
+                    <input type="password" id="login_password" placeholder="Password" value="admin@123">
                 </div>
-                <button class="login-btn" onclick="showAdminPanel()">Sign In</button>
+                <button class="login-btn" id="login_btn" onclick="handleLogin()">Sign In</button>
+                <div id="login_error" style="color: #ef4444; font-size: 0.85rem; margin-top: 1rem; text-align: center; display: none;"></div>
             </div>
         </div>
     </div>
@@ -1983,6 +1987,45 @@ Modular Kitchen..."></textarea>
 
     <script>
         const API_URL = 'api/api.php';
+
+        // handleLogin
+        async function handleLogin() {
+            const user = document.getElementById('login_username').value;
+            const pass = document.getElementById('login_password').value;
+            const err = document.getElementById('login_error');
+            const btn = document.getElementById('login_btn');
+
+            err.style.display = 'none';
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Signing In...';
+            btn.disabled = true;
+
+            try {
+                const formData = new FormData();
+                formData.append('username', user);
+                formData.append('password', pass);
+
+                const response = await fetch(`${API_URL}?action=login`, {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+
+                if (result.success) {
+                    showAdminPanel();
+                } else {
+                    err.textContent = result.error || 'Invalid credentials';
+                    err.style.display = 'block';
+                    btn.innerHTML = 'Sign In';
+                    btn.disabled = false;
+                }
+            } catch (error) {
+                console.error('Login error:', error);
+                err.textContent = 'Connection error. Please try again.';
+                err.style.display = 'block';
+                btn.innerHTML = 'Sign In';
+                btn.disabled = false;
+            }
+        }
 
         // Show/Hide Admin Panel
         function showAdminPanel() {
