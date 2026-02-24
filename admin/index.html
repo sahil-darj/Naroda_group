@@ -541,25 +541,268 @@
             background: #333;
         }
 
-        /* Responsive */
+        /* ==========================================================================
+           RESPONSIVE DESIGN (MOBILE & TABLET)
+           ========================================================================== */
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            font-size: 1.25rem;
+            cursor: pointer;
+            color: #111;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+
+        .menu-toggle:hover {
+            background: #f3f4f6;
+        }
+
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(2px);
+            z-index: 1500;
+        }
+
+        .sidebar-overlay.active {
+            display: block;
+        }
+
+        /* Large Tablets & Small Laptops (Max 1024px) */
         @media (max-width: 1024px) {
+            .sidebar {
+                width: 260px;
+            }
+
+            .main-content {
+                margin-left: 260px;
+                padding: 1.5rem;
+            }
+
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-
-            .charts-grid {
-                grid-template-columns: 1fr;
-            }
         }
 
+        /* Tablets (Max 768px) */
         @media (max-width: 768px) {
             .sidebar {
-                width: 0;
-                display: none;
+                transform: translateX(-100%);
+                z-index: 2000;
+                width: 280px;
+            }
+
+            .sidebar.active {
+                transform: translateX(0);
             }
 
             .main-content {
                 margin-left: 0;
+                padding: 1rem;
+                width: 100%;
+            }
+
+            .top-bar {
+                padding: 0.75rem 1rem;
+                margin-bottom: 1.25rem;
+                border-radius: 0.75rem;
+                gap: 0.5rem;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .page-title h1 {
+                font-size: 1.125rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 140px;
+            }
+
+            .page-title p {
+                display: none;
+                /* Hide subtitle on small mobile to save space */
+            }
+
+            .admin-profile {
+                gap: 0.75rem;
+            }
+
+            .profile-info {
+                display: none;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1rem;
+            }
+
+            .stat-card {
+                padding: 1.25rem;
+            }
+
+            .stat-number {
+                font-size: 1.5rem;
+            }
+
+            .charts-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1.25rem;
+            }
+
+            /* Responsive Forms & Grids */
+            .grid-form,
+            .modal-body [style*="display: grid"],
+            [style*="grid-template-columns: 1fr 1fr"],
+            [style*="grid-template-columns: repeat"],
+            [style*="grid-template-columns:repeat"] {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+
+            /* Tables Responsiveness */
+            .table-responsive {
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                margin-bottom: 1rem;
+                border: 1px solid #e5e7eb;
+                border-radius: 8px;
+            }
+
+            .table-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .table-header .btn-primary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            /* Modals Optimization */
+            .modal-content {
+                width: calc(100% - 20px);
+                margin: 10px;
+                max-height: 92vh;
+            }
+
+            .modal-header,
+            .modal-body,
+            .modal-footer {
+                padding: 1.25rem;
+            }
+
+            /* Project Management Tabs */
+            .tabs {
+                flex-wrap: nowrap !important;
+                overflow-x: auto !important;
+                padding-bottom: 0.25rem;
+                margin-bottom: 1.5rem;
+                -webkit-overflow-scrolling: touch;
+                gap: 0.5rem !important;
+            }
+
+            .tab-btn {
+                white-space: nowrap;
+                padding: 0.6rem 1rem;
+                font-size: 0.875rem;
+                flex: 0 0 auto;
+            }
+
+            .sub-tabs {
+                flex-wrap: wrap !important;
+                gap: 0.5rem !important;
+            }
+
+            .sub-tab-btn {
+                flex: 1 1 calc(50% - 0.5rem);
+                text-align: center;
+                font-size: 0.8rem;
+                padding: 0.5rem;
+            }
+
+            /* Rich Details stacking */
+            #richDetailsTab [style*="grid-template-columns"],
+            #projectSection [style*="grid-template-columns"],
+            [style*="display: grid"][style*="grid-template-columns: 1fr 1fr"],
+            [style*="display: grid"][style*="grid-template-columns: 1fr 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+
+            /* Responsive Flex Button Groups */
+            [style*="display: flex"][style*="gap: 10px"],
+            [style*="display: flex"][style*="gap: 15px"],
+            .modal-footer {
+                flex-direction: column !important;
+                gap: 0.75rem !important;
+            }
+
+            [style*="display: flex"][style*="gap: 10px"] button,
+            [style*="display: flex"][style*="gap: 15px"] button,
+            .modal-footer button {
+                width: 100% !important;
+                margin: 0 !important;
+            }
+
+            /* Action Buttons Touch-Friendly */
+            .action-buttons {
+                gap: 0.75rem !important;
+                display: flex !important;
+                flex-direction: row !important;
+                /* Keep icons horizontal */
+            }
+
+            .action-btn {
+                width: 38px !important;
+                height: 38px !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                background: #f3f4f6 !important;
+                border: 1px solid #e5e7eb !important;
+                border-radius: 8px !important;
+                font-size: 1rem !important;
+            }
+
+            /* Upload Area Responsive */
+            .upload-area {
+                padding: 1.5rem !important;
+                margin: 1.5rem 0 !important;
+            }
+
+            .upload-area i {
+                font-size: 2.5rem !important;
+            }
+
+            /* Login Page Optimization */
+            .login-card {
+                width: calc(100% - 30px) !important;
+                padding: 2.5rem 1.5rem !important;
+                margin: 15px !important;
+            }
+
+            .login-header h2 {
+                font-size: 1.75rem !important;
+            }
+        }
+
+        /* Landscape Mobile Devices */
+        @media (max-height: 500px) and (max-width: 900px) {
+            .modal-content {
+                max-height: 85vh;
             }
         }
 
@@ -725,6 +968,7 @@
 
     <!-- Admin Panel (hidden initially) -->
     <div id="adminPanel" style="display: none;">
+        <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
         <div class="admin-container">
             <!-- Sidebar -->
             <aside class="sidebar">
@@ -778,9 +1022,14 @@
             <main class="main-content">
                 <!-- Top Bar -->
                 <div class="top-bar">
-                    <div class="page-title">
-                        <h1 id="pageTitle">Dashboard</h1>
-                        <p id="pageSubtitle">Welcome back, Admin</p>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div class="menu-toggle" onclick="toggleSidebar()">
+                            <i class="fas fa-bars"></i>
+                        </div>
+                        <div class="page-title">
+                            <h1 id="pageTitle">Dashboard</h1>
+                            <p id="pageSubtitle">Welcome back, Admin</p>
+                        </div>
                     </div>
                     <div class="admin-profile">
                         <div class="notifications">
@@ -883,20 +1132,22 @@
                                 <i class="fas fa-plus"></i> Add Project
                             </button>
                         </div>
-                        <table id="recentProjectsTable">
-                            <thead>
-                                <tr>
-                                    <th>Project Name</th>
-                                    <th>Type</th>
-                                    <th>Price/sq.ft</th>
-                                    <th>Status</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Data will be loaded via JS -->
-                            </tbody>
-                        </table>
+                        <div class="table-responsive">
+                            <table id="recentProjectsTable">
+                                <thead>
+                                    <tr>
+                                        <th>Project Name</th>
+                                        <th>Type</th>
+                                        <th>Price/sq.ft</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Data will be loaded via JS -->
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
 
                     <!-- Recent Testimonials -->
@@ -907,20 +1158,22 @@
                                 <i class="fas fa-plus"></i> Add Testimonial
                             </button>
                         </div>
-                        <table id="recentTestimonialsTable">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Project</th>
-                                    <th>Rating</th>
-                                    <th>Status</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Data will be loaded via JS -->
-                            </tbody>
-                        </table>
+                        <div class="table-responsive">
+                            <table id="recentTestimonialsTable">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Project</th>
+                                        <th>Rating</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Data will be loaded via JS -->
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
 
@@ -933,21 +1186,23 @@
                                 <i class="fas fa-plus"></i> Add Project
                             </button>
                         </div>
-                        <table id="allProjectsTable">
-                            <thead>
-                                <tr>
-                                    <th>Project Name</th>
-                                    <th>Type</th>
-                                    <th>Price/sq.ft</th>
-                                    <th>Location</th>
-                                    <th>Status</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Data will be loaded via JS -->
-                            </tbody>
-                        </table>
+                        <div class="table-responsive">
+                            <table id="allProjectsTable">
+                                <thead>
+                                    <tr>
+                                        <th>Project Name</th>
+                                        <th>Type</th>
+                                        <th>Price/sq.ft</th>
+                                        <th>Location</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Data will be loaded via JS -->
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
 
@@ -960,21 +1215,23 @@
                                 <i class="fas fa-plus"></i> Add Testimonial
                             </button>
                         </div>
-                        <table id="allTestimonialsTable">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Project</th>
-                                    <th>Testimonial</th>
-                                    <th>Rating</th>
-                                    <th>Status</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Data will be loaded via JS -->
-                            </tbody>
-                        </table>
+                        <div class="table-responsive">
+                            <table id="allTestimonialsTable">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Project</th>
+                                        <th>Testimonial</th>
+                                        <th>Rating</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Data will be loaded via JS -->
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
 
@@ -1038,22 +1295,24 @@
                         <div class="table-header">
                             <h3>Contact Inquiries</h3>
                         </div>
-                        <table id="inquiriesTable">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Project Interest</th>
-                                    <th>Date</th>
-                                    <th>Status</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Data mapped via JS -->
-                            </tbody>
-                        </table>
+                        <div class="table-responsive">
+                            <table id="inquiriesTable">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Project Interest</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Data mapped via JS -->
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
 
@@ -1066,20 +1325,22 @@
                                 <i class="fas fa-plus"></i> Add Blog Post
                             </button>
                         </div>
-                        <table id="allBlogsTable">
-                            <thead>
-                                <tr>
-                                    <th>Title</th>
-                                    <th>Author</th>
-                                    <th>Status</th>
-                                    <th>Date</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Data loaded via JS -->
-                            </tbody>
-                        </table>
+                        <div class="table-responsive">
+                            <table id="allBlogsTable">
+                                <thead>
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Author</th>
+                                        <th>Status</th>
+                                        <th>Date</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Data loaded via JS -->
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
 
@@ -1092,36 +1353,40 @@
                                 <i class="fas fa-plus"></i> Add New Opening
                             </button>
                         </div>
-                        <table id="jobsTable">
-                            <thead>
-                                <tr>
-                                    <th>Job Title</th>
-                                    <th>Experience</th>
-                                    <th>Status</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody></tbody>
-                        </table>
+                        <div class="table-responsive">
+                            <table id="jobsTable">
+                                <thead>
+                                    <tr>
+                                        <th>Job Title</th>
+                                        <th>Experience</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
                     </div>
 
                     <div class="table-card" style="margin-top: 30px;">
                         <div class="table-header">
                             <h3>Applicants</h3>
                         </div>
-                        <table id="applicantsTable">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Job</th>
-                                    <th>Email/Phone</th>
-                                    <th>Resume</th>
-                                    <th>Date</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody></tbody>
-                        </table>
+                        <div class="table-responsive">
+                            <table id="applicantsTable">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Job</th>
+                                        <th>Email/Phone</th>
+                                        <th>Resume</th>
+                                        <th>Date</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
 
@@ -1134,18 +1399,20 @@
                                 <i class="fas fa-plus"></i> Add Team Member
                             </button>
                         </div>
-                        <table id="teamTable">
-                            <thead>
-                                <tr>
-                                    <th>Image</th>
-                                    <th>Name</th>
-                                    <th>Designation</th>
-                                    <th>Order</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody></tbody>
-                        </table>
+                        <div class="table-responsive">
+                            <table id="teamTable">
+                                <thead>
+                                    <tr>
+                                        <th>Image</th>
+                                        <th>Name</th>
+                                        <th>Designation</th>
+                                        <th>Order</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
 
@@ -2102,6 +2369,12 @@ Modular Kitchen..."></textarea>
             }
         }
 
+        // Sidebar Toggle for Mobile
+        function toggleSidebar() {
+            document.querySelector('.sidebar').classList.toggle('active');
+            document.getElementById('sidebarOverlay').classList.toggle('active');
+        }
+
         // Show/Hide Admin Panel
         function showAdminPanel() {
             document.getElementById('loginPage').style.display = 'none';
@@ -2807,6 +3080,14 @@ Modular Kitchen..."></textarea>
 
         // Section Navigation
         function showSection(section) {
+            // Close sidebar on mobile
+            if (window.innerWidth <= 768) {
+                const sidebar = document.querySelector('.sidebar');
+                const overlay = document.getElementById('sidebarOverlay');
+                if (sidebar) sidebar.classList.remove('active');
+                if (overlay) overlay.classList.remove('active');
+            }
+
             const navItems = document.querySelectorAll('.nav-item');
             navItems.forEach(item => item.classList.remove('active'));
 
