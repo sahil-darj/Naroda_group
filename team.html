@@ -173,7 +173,7 @@
     <script>
         async function fetchTeam() {
             try {
-                const response = await fetch('admin2/api/api.php?action=get_team');
+                const response = await fetch('admin/api/api.php?action=get_team');
                 const team = await response.json();
 
                 const container = document.getElementById('team-container');
@@ -181,7 +181,7 @@
                 if (team && team.length > 0) {
                     const formatImagePath = (path) => {
                         if (!path) return 'naroda_group_assets/team_placeholder.jpg';
-                        if (path.startsWith('api/')) return 'admin2/' + path;
+                        if (path.startsWith('api/')) return 'admin/' + path;
                         return path;
                     };
 

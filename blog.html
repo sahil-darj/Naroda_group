@@ -289,7 +289,7 @@
             const noBlogs = document.getElementById('no-blogs');
 
             try {
-                const response = await fetch('admin2/api/api.php?action=get_blogs');
+                const response = await fetch('admin/api/api.php?action=get_blogs');
                 if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
                 const responseText = await response.text();
@@ -304,7 +304,7 @@
                 if (Array.isArray(blogs) && blogs.length > 0) {
                     const formatImagePath = (path) => {
                         if (!path) return 'naroda_group_assets/1 (26).jpeg';
-                        if (path.startsWith('api/')) return 'admin2/' + path;
+                        if (path.startsWith('api/')) return 'admin/' + path;
                         return path;
                     };
 

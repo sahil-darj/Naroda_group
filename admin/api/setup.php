@@ -153,7 +153,7 @@ try {
     echo "<strong>✅ Setup Complete!</strong><br>";
     echo "All tables created/updated successfully.<br>";
     echo "Database: <code>$db</code><br>";
-    echo "<a href='../home.html'>Go to Admin Panel</a>";
+    echo "<a href='../'>Go to Admin Panel</a>";
 
 } catch (PDOException $e) {
     die("Error: " . $e->getMessage());

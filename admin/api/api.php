@@ -432,7 +432,7 @@ try {
             $stmt->execute([$id]);
             $img = $stmt->fetch();
             if ($img) {
-                $localPath  = str_replace('admin2/api/', '', $img['image_path']);
+                $localPath  = str_replace('admin/api/', '', $img['image_path']);
                 $serverRoot = dirname(dirname(__DIR__));
                 $fullPath   = $serverRoot . '/' . $localPath;
                 if (file_exists($fullPath)) unlink($fullPath);
@@ -755,7 +755,7 @@ try {
                 $safeName = preg_replace('/[^a-zA-Z0-9]/', '_', pathinfo($_FILES['image']['name'], PATHINFO_FILENAME));
                 $fileName = time() . '_' . substr($safeName, 0, 50) . '.' . $ext;
                 if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadDir . $fileName)) {
-                    // Return path relative to the admin2 folder
+                    // Return path relative to the admin folder
                     $path = 'api/uploads/' . $subfolder . '/' . $fileName;
                     echo json_encode(['success' => true, 'path' => $path]);
                 } else {

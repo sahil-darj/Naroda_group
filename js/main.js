@@ -681,7 +681,7 @@ function renderHeader() {
                 </div>
 
                 <a href="contact-us.html" class="nav-link">Contact Us</a>
-                <a href="admin2/home.html" class="nav-link" style="display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-user-lock" style="font-size: 12px; opacity: 0.8;"></i> Login</a>
+
             </div>
 
             <!-- Right: Action Buttons -->
@@ -719,7 +719,7 @@ function renderHeader() {
             <a href="careers.html" class="mobile-nav-link" style="color: white; text-decoration: none; font-size: 18px; font-weight: 500;">Careers</a>
             <a href="team.html" class="mobile-nav-link" style="color: white; text-decoration: none; font-size: 18px; font-weight: 500;">Our Team</a>
             <a href="contact-us.html" class="mobile-nav-link" style="color: white; text-decoration: none; font-size: 18px; font-weight: 500;">Contact Us</a>
-            <a href="admin2/home.html" class="mobile-nav-link" style="color: white; text-decoration: none; font-size: 18px; font-weight: 500; display: flex; align-items: center; gap: 10px;"><i class="fa-solid fa-user-lock"></i> Login</a>
+
             <button id="mobile-enquiry-btn" style="background: white; color: black; border: none; padding: 15px; border-radius: 50px; font-weight: 700; text-transform: uppercase; cursor: pointer; font-family: 'Inter', sans-serif; margin-top: 20px; width: 100%;">Enquiry Now</button>
         </div>
     </div>
@@ -927,7 +927,7 @@ function renderHeader() {
                 formData.append('message', message);
 
                 try {
-                    const response = await fetch('admin2/api/api.php?action=save_inquiry', {
+                    const response = await fetch('admin/api/api.php?action=save_inquiry', {
                         method: 'POST',
                         body: formData
                     });

@@ -460,7 +460,7 @@
         <script>
             async function loadProjects() {
                 try {
-                    const response = await fetch('admin2/api/api.php?action=get_projects&limit=50&offset=0');
+                    const response = await fetch('admin/api/api.php?action=get_projects&limit=50&offset=0');
                     if (!response.ok) return;
                     const projects = await response.json();
                     if (!projects || projects.length === 0) {
@@ -468,7 +468,7 @@
                         return;
                     }
 
-                    const fixP = (p) => p && !p.startsWith('http') && !p.startsWith('admin2/') && !p.startsWith('naroda_group_assets/') ? 'admin2/' + p : p;
+                    const fixP = (p) => p && !p.startsWith('http') && !p.startsWith('admin/') && !p.startsWith('naroda_group_assets/') ? 'admin/' + p : p;
 
                     const grid = document.getElementById('projects-grid');
                     grid.innerHTML = projects.map(p => {

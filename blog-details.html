@@ -145,7 +145,7 @@
 
             const formatImagePath = (path) => {
                 if (!path) return 'naroda_group_assets/1 (26).jpeg';
-                if (path.startsWith('api/')) return 'admin2/' + path;
+                if (path.startsWith('api/')) return 'admin/' + path;
                 return path;
             };
 
@@ -155,7 +155,7 @@
             }
 
             try {
-                const response = await fetch(`admin2/api/api.php?action=get_blog&id=${blogId}`);
+                const response = await fetch(`admin/api/api.php?action=get_blog&id=${blogId}`);
                 const blog = await response.json();
 
                 if (blog && !blog.error) {

@@ -306,7 +306,7 @@
 
         async function fetchJobs() {
             try {
-                const response = await fetch('admin2/api/api.php?action=get_jobs');
+                const response = await fetch('admin/api/api.php?action=get_jobs');
                 allJobs = await response.json();
 
                 const jobList = document.getElementById('job-list');
@@ -427,7 +427,7 @@
             formData.append('subfolder', 'resumes');
 
             try {
-                const res = await fetch('admin2/api/api.php?action=upload_image', {
+                const res = await fetch('admin/api/api.php?action=upload_image', {
                     method: 'POST',
                     body: formData
                 });
@@ -451,7 +451,7 @@
             const formData = new FormData(this);
 
             try {
-                const res = await fetch('admin2/api/api.php?action=submit_application', {
+                const res = await fetch('admin/api/api.php?action=submit_application', {
                     method: 'POST',
                     body: formData
                 });

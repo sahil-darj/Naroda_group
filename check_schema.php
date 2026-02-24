@@ -1,5 +1,5 @@
 <?php
-include 'admin2/api/config.php';
+include 'admin/api/config.php';
 $cols = $pdo->query("SHOW COLUMNS FROM projects")->fetchAll(PDO::FETCH_COLUMN);
 file_put_contents('schema_out.txt', "PROJECTS columns: " . implode(', ', $cols) . "\n");
 

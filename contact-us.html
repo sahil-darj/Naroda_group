@@ -566,7 +566,7 @@
                 data.append('message', message);
 
                 try {
-                    const response = await fetch('admin2/api/api.php?action=save_inquiry', { method: 'POST', body: data });
+                    const response = await fetch('admin/api/api.php?action=save_inquiry', { method: 'POST', body: data });
                     const result = await response.json();
 
                     if (result.success) {

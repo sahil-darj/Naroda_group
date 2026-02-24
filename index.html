@@ -909,7 +909,7 @@
   <script>
     async function loadTestimonials() {
       try {
-        const response = await fetch('admin2/api/api.php?action=get_testimonials');
+        const response = await fetch('admin/api/api.php?action=get_testimonials');
         const data = await response.json();
         const track = document.getElementById('testimonial-track');
         const dotsContainer = document.getElementById('slider-dots');
@@ -998,7 +998,7 @@
 
     async function loadAdvantages() {
       try {
-        const response = await fetch('admin2/api/api.php?action=get_advantages&limit=50');
+        const response = await fetch('admin/api/api.php?action=get_advantages&limit=50');
         const advantages = await response.json();
         const grid = document.getElementById('advantages-grid');
         if (advantages && advantages.length > 0) {
@@ -1019,12 +1019,12 @@
 
     async function loadProjects() {
       try {
-        const response = await fetch('admin2/api/api.php?action=get_projects&limit=2');
+        const response = await fetch('admin/api/api.php?action=get_projects&limit=2');
         const projects = await response.json();
         const grid = document.getElementById('index-projects-grid');
 
         if (projects && projects.length > 0) {
-          const fixP = (p) => p && !p.startsWith('http') && !p.startsWith('admin2/') && !p.startsWith('naroda_group_assets/') ? 'admin2/' + p : p;
+          const fixP = (p) => p && !p.startsWith('http') && !p.startsWith('admin/') && !p.startsWith('naroda_group_assets/') ? 'admin/' + p : p;
           grid.innerHTML = projects.map(p => {
             const imgSrc = p.image ? fixP(p.image) : 'naroda_group_assets/1 (26).jpeg';
             const detailUrl = p.detail_url ? p.detail_url : `project-details.html?id=${p.id}`;
