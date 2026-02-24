@@ -70,15 +70,33 @@ try {
             // Get Recent Activity
             $activities = $pdo->query("SELECT *, created_at as date FROM activity_log ORDER BY created_at DESC LIMIT 5")->fetchAll();
             
-            // Get Views for last 7 days
+            // Get Views for dynamic days
+            $days = intval($_GET['days'] ?? 7);
             $viewsData = [];
-            for ($i = 6; $i >= 0; $i--) {
+            for ($i = $days - 1; $i >= 0; $i--) {
                 $date = date('Y-m-d', strtotime("-$i days"));
                 $count = $pdo->prepare("SELECT SUM(view_count) FROM project_views WHERE view_date = ?");
                 $count->execute([$date]);
                 $c = $count->fetchColumn() ?: 0;
-                $viewsData[] = ['label' => date('D', strtotime($date)), 'value' => intval($c)];
+                
+                // Better labeling based on range
+                if ($days <= 7) {
+                    $label = date('D', strtotime($date)); // MON, TUE...
+                } elseif ($days <= 31) {
+                    $label = date('j', strtotime($date)); // 1, 2, 3...
+                } else {
+                    $label = date('d/m', strtotime($date)); // 24/02...
+                }
+
+                $viewsData[] = [
+                    'label' => $label, 
+                    'full_label' => date('D, d M Y', strtotime($date)),
+                    'value' => intval($c)
+                ];
             }
+
+            // Get views per project
+            $projectViews = $pdo->query("SELECT p.name, SUM(v.view_count) as views FROM projects p LEFT JOIN project_views v ON p.id = v.project_id GROUP BY p.id ORDER BY views DESC")->fetchAll();
 
             echo json_encode([
                 'projects'     => $projectCount,
@@ -86,7 +104,8 @@ try {
                 'testimonials' => $testimonialCount,
                 'families'     => '2,048+',
                 'activities'   => $activities,
-                'views'        => $viewsData
+                'views'        => $viewsData,
+                'project_views' => $projectViews
             ]);
             break;
             

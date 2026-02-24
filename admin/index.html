@@ -631,6 +631,72 @@
             font-size: 0.875rem;
             color: #374151;
         }
+
+        /* Chart Animations & Tooltips */
+        .chart-bar-container {
+            flex: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            padding-bottom: 5px;
+            position: relative;
+        }
+
+        .chart-bar {
+            width: 40px;
+            background: linear-gradient(180deg, #3b82f6 0%, #2563eb 100%);
+            border-radius: 6px 6px 0 0;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            position: relative;
+            box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.2);
+        }
+
+        .chart-bar:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.1);
+            box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3);
+        }
+
+        .chart-bar-value {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 8px;
+            background: #fff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e5e7eb;
+            opacity: 0;
+            transform: translateY(5px);
+            transition: all 0.2s;
+        }
+
+        .chart-bar-container:hover .chart-bar-value {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .chart-bar-label {
+            font-size: 0.75rem;
+            color: #6b7280;
+            font-weight: 500;
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+        }
+
+        .chart-bg-line {
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #f3f4f6;
+            z-index: 0;
+        }
     </style>
 </head>
 
@@ -644,10 +710,10 @@
             </div>
             <div class="login-form">
                 <div class="form-group">
-                    <input type="text" id="login_username" placeholder="Username" value="admin@naroda.com">
+                    <input type="text" id="login_username" placeholder="Username">
                 </div>
                 <div class="form-group">
-                    <input type="password" id="login_password" placeholder="Password" value="admin@123">
+                    <input type="password" id="login_password" placeholder="Password">
                 </div>
                 <button class="login-btn" id="login_btn" onclick="handleLogin()">Sign In</button>
                 <div id="login_error"
@@ -778,15 +844,25 @@
                         <div class="chart-card">
                             <div class="chart-header">
                                 <h3>Project Views</h3>
-                                <select>
-                                    <option>Last 7 days</option>
-                                    <option>Last 30 days</option>
-                                    <option>Last 3 months</option>
+                                <select id="viewTimeRange" onchange="loadDashboardData()"
+                                    style="padding: 0.5rem; border-radius: 8px; border: 1px solid #e5e7eb; font-size: 0.875rem; outline: none; cursor: pointer;">
+                                    <option value="3">Last 3 days</option>
+                                    <option value="7" selected>Last 7 days</option>
+                                    <option value="15">Last 15 days</option>
+                                    <option value="30">Last 30 days</option>
+                                    <!-- <option value="90">Last 3 months</option> -->
                                 </select>
                             </div>
                             <div id="projectViewsChart"
-                                style="height: 200px; display: flex; align-items: flex-end; gap: 1rem; padding: 1rem 0;">
+                                style="height: 200px; display: flex; align-items: stretch; gap: 1rem; padding: 1rem 0; margin-bottom: 1.5rem;">
                                 <!-- Dynamic via JS -->
+                            </div>
+                            <div style="border-top: 1px solid #f3f4f6; padding-top: 1.5rem;">
+                                <h4 style="font-size: 0.875rem; font-weight: 600; margin-bottom: 1rem; color: #374151;">
+                                    Views per Project</h4>
+                                <div id="projectBreakdown">
+                                    <!-- Dynamic via JS -->
+                                </div>
                             </div>
                         </div>
                         <div class="chart-card">
@@ -2044,7 +2120,8 @@ Modular Kitchen..."></textarea>
 
         async function loadDashboardData() {
             try {
-                const response = await fetch(`${API_URL}?action=get_dashboard_stats&_t=${Date.now()}`);
+                const days = document.getElementById('viewTimeRange')?.value || 7;
+                const response = await fetch(`${API_URL}?action=get_dashboard_stats&days=${days}&_t=${Date.now()}`);
                 if (!response.ok) throw new Error('HTTP ' + response.status);
                 const text = await response.text();
                 let data;
@@ -2067,16 +2144,68 @@ Modular Kitchen..."></textarea>
                 const chartCont = document.getElementById('projectViewsChart');
                 if (chartCont && data.views && data.views.length) {
                     const maxVal = Math.max(...data.views.map(v => v.value), 1);
-                    chartCont.style.alignItems = 'flex-end';
-                    chartCont.innerHTML = data.views.map(v => {
-                        const height = Math.max((v.value / maxVal * 90) + 10, 10);
-                        const barColor = v.value > 0 ? '#3b82f6' : '#e5e7eb';
-                        return `<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
-                                    <span style="font-size:0.65rem;color:#374151;font-weight:600;">${v.value > 0 ? v.value : ''}</span>
-                                    <div style="width:100%;background:${barColor};border-radius:4px 4px 0 0;height:${height}%;transition:height 0.5s;"></div>
-                                    <span style="font-size:0.65rem;color:#6b7280;">${v.label}</span>
-                                </div>`;
+                    const days = data.views.length;
+
+                    // Reset container styles for dynamic range
+                    chartCont.style.position = 'relative';
+                    chartCont.style.alignItems = 'stretch';
+                    chartCont.style.gap = days > 15 ? (days > 40 ? '2px' : '6px') : '1rem';
+
+                    chartCont.innerHTML = `
+                        <div class="chart-bg-line" style="bottom: 25%"></div>
+                        <div class="chart-bg-line" style="bottom: 50%"></div>
+                        <div class="chart-bg-line" style="bottom: 75%"></div>
+                    `;
+
+                    // Adjust bar width and label density
+                    const barWidth = days > 31 ? '100%' : (days > 15 ? 'auto' : '40px');
+                    const fontSize = days > 31 ? '0.55rem' : '0.7rem';
+                    const showValueAlways = days <= 7;
+
+                    // Label frequency logic
+                    let labelFreq = 1;
+                    if (days > 7) labelFreq = 2;
+                    if (days > 15) labelFreq = 5;
+                    if (days > 40) labelFreq = 10;
+                    if (days > 80) labelFreq = 15;
+
+                    chartCont.innerHTML += data.views.map((v, idx) => {
+                        const height = Math.max((v.value / maxVal * 80), 2);
+                        const isEven = (idx + 1) % labelFreq === 0;
+                        const showLabel = (idx === 0 || idx === days - 1 || isEven);
+
+                        return `
+                            <div class="chart-bar-container" style="gap: ${days > 15 ? '1px' : '4px'}" title="${v.full_label}: ${v.value} views">
+                                <div class="chart-bar-value" style="font-size: ${fontSize}; ${showValueAlways ? 'opacity: 1; transform: translateY(0);' : ''}">${v.value}</div>
+                                <div class="chart-bar" style="height: ${height}%; width: ${barWidth}; min-width: 2px; ${v.value === 0 ? 'background: #f3f4f6; box-shadow: none;' : ''}"></div>
+                                <div class="chart-bar-label" style="font-size: ${fontSize}; ${showLabel ? '' : 'visibility: hidden'}">${v.label}</div>
+                            </div>
+                        `;
                     }).join('');
+                }
+
+                // Render Project Breakdown
+                const breakdownCont = document.getElementById('projectBreakdown');
+                if (breakdownCont && data.project_views) {
+                    if (data.project_views.length === 0) {
+                        breakdownCont.innerHTML = '<p style="color:#9ca3af;font-size:0.85rem;text-align:center;">No project data.</p>';
+                    } else {
+                        const totalViews = data.project_views.reduce((sum, p) => sum + parseInt(p.views || 0), 0) || 1;
+                        breakdownCont.innerHTML = data.project_views.map(p => {
+                            const percentage = Math.round((parseInt(p.views || 0) / totalViews) * 100);
+                            return `
+                                <div style="margin-bottom: 1rem;">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.8rem;">
+                                        <span style="font-weight: 500; color: #1f2937;">${p.name}</span>
+                                        <span style="color: #6b7280; font-weight: 600;">${p.views || 0} views</span>
+                                    </div>
+                                    <div style="height: 6px; background: #f3f4f6; border-radius: 10px; overflow: hidden;">
+                                        <div style="height: 100%; width: ${percentage}%; background: #3b82f6; border-radius: 10px;"></div>
+                                    </div>
+                                </div>
+                            `;
+                        }).join('');
+                    }
                 }
 
                 // Render Recent Activity

@@ -159,6 +159,28 @@ try {
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )");
 
+    // Activity Log Table
+    $pdo->exec("CREATE TABLE IF NOT EXISTS activity_log (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        type VARCHAR(50),
+        message TEXT,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )");
+
+    // Project Views Table (for bar chart)
+    $pdo->exec("CREATE TABLE IF NOT EXISTS project_views (
+        project_id INT,
+        view_date DATE,
+        view_count INT DEFAULT 0,
+        PRIMARY KEY (project_id, view_date),
+        FOREIGN KEY (project_id) REFERENCES projects(id) ON DELETE CASCADE
+    )");
+
+    // Add missing columns to project_details if they don't exist
+    try { $pdo->exec("ALTER TABLE project_details ADD COLUMN blocks VARCHAR(50) AFTER stat_units"); } catch(Exception $e) {}
+    try { $pdo->exec("ALTER TABLE project_details ADD COLUMN video_url VARCHAR(255) AFTER brochure_pdf"); } catch(Exception $e) {}
+    try { $pdo->exec("ALTER TABLE activity_log ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP"); } catch(Exception $e) {}
+
     // Insert Default Admin if not exists
     $stmt = $pdo->prepare("SELECT COUNT(*) FROM users WHERE username = 'admin@naroda.com'");
     $stmt->execute();
