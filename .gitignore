@@ -1,0 +1,10 @@
+naroda_group_assets/
+node_modules/
+*.zip
+*.rar
+*.mp4
+*.mov
+*.psd
+*.log
+.vscode/
+.idea/
